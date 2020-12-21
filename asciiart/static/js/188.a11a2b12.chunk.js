@@ -1,0 +1,2 @@
+(this.webpackJsonpawesomeasciiart=this.webpackJsonpawesomeasciiart||[]).push([[188],{1141:function(s,t,n){"use strict";n.r(t),t.default="# Tortoise\n# from http://svn.haxx.se/tsvn/archive-2005-06/1030.shtml (accessed 9/11/2014)\n$the_cow = <<EOC;\n  $thoughts\n   $thoughts       ___\n      oo  // \\\\\\\\\n     (_,\\\\/ \\\\_/ \\\\\n       \\\\ \\\\_/_\\\\_/>\n       /_/   \\\\_\\\\\nEOC\n"}}]);
+//# sourceMappingURL=188.a11a2b12.chunk.js.map

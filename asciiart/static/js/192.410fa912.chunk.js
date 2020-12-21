@@ -1,0 +1,2 @@
+(this.webpackJsonpawesomeasciiart=this.webpackJsonpawesomeasciiart||[]).push([[192],{1145:function(n,s,e){"use strict";e.r(s),s.default="##\n## TuX\n## (c) pborys@p-soft.silesia.linux.org.pl \n##\n$the_cow = <<EOC;\n   $thoughts\n    $thoughts\n        .--.\n       |$eye_$eye |\n       |:_/ |\n      //   \\\\ \\\\\n     (|     | )\n    /'\\\\_   _/\\\\\\\n    \\\\___)=(___/\n\nEOC\n"}}]);
+//# sourceMappingURL=192.410fa912.chunk.js.map

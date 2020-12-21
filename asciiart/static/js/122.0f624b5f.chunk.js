@@ -1,0 +1,2 @@
+(this.webpackJsonpawesomeasciiart=this.webpackJsonpawesomeasciiart||[]).push([[122],{1075:function(n,e,t){"use strict";t.r(e),e.default="##\n## From the canonical koala collection\n##\n$the_cow = <<EOC;\n  $thoughts\n   $thoughts          .\n       ___   //\n     {~$eye_$eye~}// \n      ( Y )K/  \n     ()~*~()   \n     (_)-(_)   \n  \nEOC\n"}}]);
+//# sourceMappingURL=122.0f624b5f.chunk.js.map

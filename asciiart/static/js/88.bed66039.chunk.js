@@ -1,0 +1,2 @@
+(this.webpackJsonpawesomeasciiart=this.webpackJsonpawesomeasciiart||[]).push([[88],{1041:function(n,t,s){"use strict";s.r(t),t.default="##\n## ejm97 http://www.ascii-art.de/ascii/ghi/goat.txt\n##\n$the_cow = <<EOC;\n       $thoughts\n        $thoughts\n         $thoughts  _))\n           > $eye\\\\     _~\n           \\;'\\\\\\\\__-' \\\\_\n              | )  _ \\\\ \\\\\n             / / \\\\   w w\n            w w\nEOC\n\n\n\n\n\n"}}]);
+//# sourceMappingURL=88.bed66039.chunk.js.map

@@ -1,0 +1,2 @@
+(this.webpackJsonpawesomeasciiart=this.webpackJsonpawesomeasciiart||[]).push([[123],{1076:function(n,t,_){"use strict";_.r(t),t.default="# MailChimp\n#\n# view-source:http://mailchimp.com/\n$the_cow = <<EOC;\n$thoughts\n $thoughts\n    ______\n   / ___M ]__\nC{ ( o o )}\n    {     \u2022\u2022\n      \\\\___\n      ----\xb4\nEOC\n"}}]);
+//# sourceMappingURL=123.ce80e100.chunk.js.map

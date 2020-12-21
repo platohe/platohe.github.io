@@ -1,0 +1,2 @@
+(this.webpackJsonpawesomeasciiart=this.webpackJsonpawesomeasciiart||[]).push([[112],{1065:function(n,t,s){"use strict";s.r(t),t.default="# Kitten\n#\n# based on rfksay by Andrew Northern\n# http://robotfindskitten.org/aw.cgi?main=software.rfk#rfksay\n#\n$the_cow = <<EOC;\n   $thoughts\n    $thoughts\n\n     |\\\\_/|\n     |o o|__\n     --*--__\\\\\n     C_C_(___)\nEOC\n"}}]);
+//# sourceMappingURL=112.17117254.chunk.js.map
