@@ -2,9 +2,9 @@ title: Plato He # your name (or website title) here
 logo: "/images/logo.png?raw=true" # your photo (or logo) here
 description:
   > # your text below (remove <br> elements if you don't need line breaks)
-  A passionate software developer worked on variety projects, currently focusing on mobile app development, as well as full stack development
+  A passionate software developer worked on variety projects, currently focusing on mobile app and full stack development
   <br><br>
-  Over years I learned/used: Assembly, FORTRAN, Basic, Pascal, C, C++, C#, Python, Ruby, Swift, Kotlin, Golang, Rust, Java, Javascript/Typescript, among others.
+  Learned/used: Assembly, FORTRAN, Basic, Pascal, C, C++, C#, Python, Ruby, Swift, Kotlin, Rust, Java, Javascript/Typescript...and more.
   <br><br>
 
 theme: jekyll-theme-minimal
