@@ -1,10 +1,11 @@
 title: Plato He # your name (or website title) here
 logo: "/images/logo.png?raw=true" # your photo (or logo) here
-description: > # your text below (remove <br> elements if you don't need line breaks)
-  A passionate software developer 
+description:
+  > # your text below (remove <br> elements if you don't need line breaks)
+  A passionate and professional software developer worked on projects range from hardware driver, office suite applications, ATM transaction processing systems... currently focusing on mobile app development, full stack development as well as DevOps activities
   <br><br>
+  Learned/used Assembly, FORTRAN, Basic, Pascal, C, C++, C#, Python, Ruby, Swift, Kotlin, Golang, Rust, Java, Javascript/Typescript, among others.
   <br><br>
-  <a href="https://platohe.github.com/">View My Github Page</a> 
-  
+
 theme: jekyll-theme-minimal
 google_analytics: UA-000000-0 # your Google Analytics tracking ID here
