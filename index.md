@@ -6,12 +6,12 @@
 <br><br><img src="images/ideas.png?raw=true" /><br><br>
 
 ---
-[Awesome Fireworks! (2020)](https://platohe.github.com/fireworks/)
+[Astonishing Fireworks! (2020)](https://platohe.github.com/fireworks/)
 <br>A collection of astonishing fireworks! - Let's Just Enjoy It!
 <br><br><img src="images/fireworks.png?raw=true" /><br><br>
 
 ---
-[Awesome ASCII Arts! (2020)](http://platohe.github.com/asciiart/)
-<br>A collection of awesome ASCII arts, including Emotion Icon, FIGlet, Fancy text, ASCIIfy Image, Glitch text(Zalgo), Cow Say, ASCII Art and ASCII Effects
+[Marvelous ASCII Arts! (2020)](http://platohe.github.com/asciiart/)
+<br>A collection of marvelous ASCII arts, including Emotion Icon, FIGlet, Fancy text, ASCIIfy Image, Glitch text(Zalgo), Cow Say, ASCII Art and ASCII Effects
 <br><br><img src="images/asciiart.png?raw=true" /><br><br>
 
