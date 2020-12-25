@@ -1,2 +1,0 @@
-(this.webpackJsonpawesomeasciiart=this.webpackJsonpawesomeasciiart||[]).push([[96],{1049:function(t,n,e){"use strict";e.r(n),n.default="##\n## A cute little hedgehog\n##\n$the_cow = <<EOC;\n  $thoughts\n   $thoughts ..:::::::::.\n    ::::::::::::::\n   /. \\::::::::::::\n  O__,_:::::::::::'\nEOC\n"}}]);
-//# sourceMappingURL=96.a36d3b91.chunk.js.map

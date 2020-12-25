@@ -1,2 +1,0 @@
-(this.webpackJsonpawesomeasciiart=this.webpackJsonpawesomeasciiart||[]).push([[27],{980:function(n,a,t){"use strict";t.r(a),a.default="# armadillo\n#\n# based on http://ascii.co.uk/art/armadillo\n$the_cow = <<EOC;\n         $thoughts\n          $thoughts\n               ,.-----__\n            ,:::://///,:::-.\n           /:''/////// \\\\:::\\;/|/\n          /'   ||||||     :://'\\\\\\\n        .' ,   ||||||     \\/(  e \\\\\n  -===~__-'\\\\__X_\\\\\\\\\\\\\\_____/~\\-._ \\.\n              ~~        ~~       \\~-'\nEOC\n\n"}}]);
-//# sourceMappingURL=27.23f3303f.chunk.js.map

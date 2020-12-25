@@ -1,2 +1,0 @@
-(this.webpackJsonpawesomeasciiart=this.webpackJsonpawesomeasciiart||[]).push([[18],{971:function(n,t,e){"use strict";e.r(t),t.default="# C3PO\n#\n# adapted from 'telnet -e x towel.blinkenlights.nl'\n$the_cow = <<EOC;\n   $thoughts\n    $thoughts\n       /~\\\\\n      |oo )\n      _\\\\=/_\n     /     \\\\\n    //|/.\\\\|\\\\\\\\\n   ||  \\\\_/  ||\n   || |\\\\ /| ||\n    \\# \\\\_ _/  \\#\n      | | |\n      | | |\n      []|[]\n      | | |\n     /_]_[_\\\\\nEOC\n"}}]);
-//# sourceMappingURL=18.f877b31f.chunk.js.map

@@ -1,0 +1,2 @@
+(this.webpackJsonpawesomeasciiart=this.webpackJsonpawesomeasciiart||[]).push([[138],{730:function(s,n,e){"use strict";e.r(n),n.default="# Pawn (Chess piece)\n#\n# from http://www.chessvariants.org/d.pieces/ascii.html\n#   by David Moeser\n#\n$the_cow = <<EOC;\n $thoughts\n  $thoughts\n     __\n    (  )\n     ||\n    /__\\\\\n   (____)\nEOC\n"}}]);
+//# sourceMappingURL=138.50584def.chunk.js.map

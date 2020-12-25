@@ -1,2 +1,0 @@
-(this.webpackJsonpawesomeasciiart=this.webpackJsonpawesomeasciiart||[]).push([[36],{989:function(t,n,e){"use strict";e.r(n),n.default="# Bill the Cat\n#\n# Based on 'ack --th[pt]+t+'\n#  from http://beyondgrep.com/ack-2.14-single-file\n$the_cow = <<EOC;\n $thoughts\n  $thoughts\n _   /|\n \\\\'o.O'\n =(___)=\n    U\nEOC\n"}}]);
-//# sourceMappingURL=36.1a10b820.chunk.js.map

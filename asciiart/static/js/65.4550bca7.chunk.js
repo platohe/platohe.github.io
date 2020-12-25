@@ -1,2 +1,0 @@
-(this.webpackJsonpawesomeasciiart=this.webpackJsonpawesomeasciiart||[]).push([[65],{1018:function(_,n,t){"use strict";t.r(n),n.default="# Dalek\n# from http://www.ascii-art.de/ascii/def/dr_who.txt (accessed 4/30/2014)\n$the_cow = <<EOC;\n   $thoughts\n    $thoughts\n              ___\n      D>=G==='   '.\n            |======|\n            |======|\n        )--/]IIIIII]\n           |_______|\n           C O O O D\n          C O  O  O D\n         C  O  O  O  D\n         C__O__O__O__D\n        [_____________]\nEOC\n"}}]);
-//# sourceMappingURL=65.4550bca7.chunk.js.map

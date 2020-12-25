@@ -1,2 +1,0 @@
-(this.webpackJsonpawesomeasciiart=this.webpackJsonpawesomeasciiart||[]).push([[31],{984:function(a,n,t){"use strict";t.r(n),n.default="# Banana \n#  http://www.ascii-art.de/ascii/ab/banana.txt\n$the_cow = <<EOC;\n       $thoughts\n        $thoughts\n\n     \".           ,#  \n     \\\\ \\-._____,-'=/\n  ____\\._ ----- _,'_____\n         \\-----'\nEOC\n"}}]);
-//# sourceMappingURL=31.a90d8fab.chunk.js.map

@@ -1,0 +1,2 @@
+(this.webpackJsonpawesomeasciiart=this.webpackJsonpawesomeasciiart||[]).push([[54],{646:function(n,t,i){"use strict";i.r(t),t.default="# Clippy\n#\n# from http://www.reddit.com/r/commandline/comments/2lb5ij/what_is_your_favorite_ascii_art/cltg01p\n#\n$the_cow = <<EOC;\n $thoughts\n  $thoughts\n     __ \n    /  \\\\  \n    |  |\n    @  @\n    |  |\n    || |/ \n    || || \n    |\\\\_/|\n    \\\\___/\nEOC\n\n"}}]);
+//# sourceMappingURL=54.dcd2e44e.chunk.js.map

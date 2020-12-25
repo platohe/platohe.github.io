@@ -1,0 +1,2 @@
+(this.webpackJsonpawesomeasciiart=this.webpackJsonpawesomeasciiart||[]).push([[32],{624:function(n,s,t){"use strict";t.r(s),s.default="##\n## Begoo\n## https://www.npmjs.com/package/begoo\n##\n$the_cow = <<EOC;\n $thoughts\n  $thoughts\n     |\\_/|\n    / @ @ \\ \n   ( > \xba < )\n    `>>x<<\xb4 \n    /  O  \\\n\nEOC\n"}}]);
+//# sourceMappingURL=32.9dfb7cb1.chunk.js.map

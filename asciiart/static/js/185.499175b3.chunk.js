@@ -1,2 +1,0 @@
-(this.webpackJsonpawesomeasciiart=this.webpackJsonpawesomeasciiart||[]).push([[185],{1138:function(e,t,s){"use strict";s.r(t),t.default="##\n## A cow with three eyes, brought to you by dpetrou@csua.berkeley.edu\n##\n$extra = chop($eyes);\n$eyes .= ($extra x 2);\n$the_cow = <<EOC;\n        $thoughts  ^___^\n         $thoughts ($eyes)\\\\_______\n           (___)\\\\       )\\\\/\\\\\n            $tongue  ||----w |\n                ||     ||\nEOC\n"}}]);
-//# sourceMappingURL=185.499175b3.chunk.js.map

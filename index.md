@@ -12,6 +12,10 @@
 
 ---
 [Marvelous ASCII! (2020)](http://platohe.github.com/asciiart/)
-<br>A collection of marvelous ASCII arts, including Emotion Icon, FIGlet, Fancy Text, ASCIIfy Image, Glitch Text(Zalgo), Cow Say, ASCII Art and ASCII Effects
+<br>A collection of marvelous ASCII, including Emotion Icon, FIGlet, Fancy Text, ASCIIfy Image, Glitch Text(Zalgo), Cow Say, and ASCII Art 
 <br><br><img src="images/asciiart.png?raw=true" /><br><br>
+---
 
+[Stunning Effects! (2020)](http://platohe.github.com/effect/)
+<br>A collection of stunning visual effects, such as matrix rain, moving particles 
+<br><br><img src="images/effects.png?raw=true" /><br><br>
