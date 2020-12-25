@@ -2,7 +2,7 @@
 ---
 
 [Awesome Ideas! (2020)](https://platohe.github.com/idea/)
-<br>A collection of personal productivity tools, including bookmark management, notes taking, secret keeper - Let's Get Things Done!
+<br>A collection of productivity tools, including bookmark management, notes taking, secret keeper - Let's Get Things Done!
 <br><br><img src="images/ideas.png?raw=true" /><br><br>
 
 ---

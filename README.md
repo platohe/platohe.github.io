@@ -12,3 +12,4 @@ ___
 ### References
 
 [1] Jekyll theme "Minimal" for GitHub Pages: https://github.com/pages-themes/minimal (CC0 1.0 Universal License)
+[2] Set Up Your Portfolio Website in Less Than 10 Minutes with Github Pages: https://medium.com/swlh/uploading-images-to-your-node-js-backend-978261eb0724
