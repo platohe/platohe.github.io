@@ -4,39 +4,7 @@
     "src": "./image/night.jpg"
   },
   {
-    "name": "Moon Night",
-    "src": "./image/moonnight.jpg"
-  },
-  {
     "name": "Sunrise",
     "src": "./image/sunrise.jpg"
-  },
-  {
-    "name": "Sunset",
-    "src": "./image/sunset.jpg"
-  },
-  {
-    "name": "Toronto",
-    "src": "./image/toronto.jpg"
-  },
-  {
-    "name": "New York",
-    "src": "./image/newyork.jpg"
-  },
-  {
-    "name": "Paris",
-    "src": "./image/paris.jpg"
-  },
-  {
-    "name": "Tokyo",
-    "src": "./image/tokyo.jpg"
-  },
-  {
-    "name": "Shanghai",
-    "src": "./image/shanghai.jpg"
-  },
-  {
-    "name": "Hong Kong",
-    "src": "./image/hongkong.jpg"
   }
 ]
