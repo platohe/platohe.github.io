@@ -5,6 +5,10 @@
 <br><br><img src="images/mdstudio.png?raw=true" /><br><br>
 
 ---
+[TaskFlow (2026)](https://platohe.github.io/taskflow/)
+<br>Minimalist yet powerful task management system with natural language input ("submit report tomorrow at 2pm #work"), Kanban/Calendar views, project hierarchy.<br><br><img src="images/taskflow.png?raw=true" /><br><br>
+
+---
 [Awesome Ideas! (2022)](https://platohe.github.io/idea/)
 <br>A collection of productivity tools, including bookmark management, notes taking, secret keeper - Let's Get Things Done!
 <br><br><img src="images/ideas.png?raw=true" /><br><br>
