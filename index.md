@@ -11,7 +11,7 @@
 
 
 ---
-[TaskFlow (2026)](https://platohe.github.io/vaultguard/)
+[VaultGuard (2026)](https://platohe.github.io/vaultguard/)
 <br>VaultGuard is a military-grade local password manager with zero-knowledge architecture. Your data never leaves your device and is protected with industry-standard AES-256 encryption.
 <br><br><img src="images/vaultguard.png?raw=true" /><br><br>
 
