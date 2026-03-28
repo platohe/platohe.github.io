@@ -1,0 +1,48 @@
+{
+  "name": "Markdown Studio",
+  "short_name": "MDStudio",
+  "description": "A modern, intuitive, and cross-platform markdown editor application with advanced features and PWA capabilities.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0078d4",
+  "orientation": "any",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Document",
+      "short_name": "New",
+      "description": "Create a new markdown document",
+      "url": "/new"
+    },
+    {
+      "name": "Open File",
+      "short_name": "Open",
+      "description": "Open an existing markdown file",
+      "url": "/open"
+    },
+    {
+      "name": "Settings",
+      "short_name": "Settings",
+      "description": "Open application settings",
+      "url": "/settings"
+    }
+  ],
+  "categories": ["productivity", "utilities", "text-editor"],
+  "lang": "en",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "screenshots": []
+}
