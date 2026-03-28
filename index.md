@@ -18,7 +18,7 @@
 
 ---
 [Snapnote (2026)](https://platohe.github.io/snapnote/)
-<br>Lightning-fast, all-encompassing system for both **memory capture** and **content creation**. SnapNote consolidates text notes, while simultaneously providing a system-wide text expansion engine to accelerate writing and data entry.
+<br>Lightning-fast, all-encompassing system for both memory capture and content creation. SnapNote consolidates text notes while simultaneously providing a system-wide text expansion engine to accelerate writing and data entry.
 <br><img src="images/snapnote.png?raw=true" /><br><br>
 
 ---
