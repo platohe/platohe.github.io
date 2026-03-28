@@ -1,4 +1,4 @@
-# User Manual
+VaultGuard is a military-grade local password manager with zero-knowledge architecture. Your data never leaves your device and is protected with industry-standard AES-256 encryption.
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -13,8 +13,6 @@
 ---
 
 ## Introduction
-
-VaultGuard is a military-grade local password manager with zero-knowledge architecture. Your data never leaves your device and is protected with industry-standard AES-256 encryption.
 
 ### Key Features
 - **Zero-Knowledge Architecture**: Only you have access to your data

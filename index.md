@@ -15,6 +15,12 @@
 <br>VaultGuard is a military-grade local password manager with zero-knowledge architecture. Your data never leaves your device and is protected with industry-standard AES-256 encryption.
 <br><br><img src="images/vaultguard.png?raw=true" /><br><br>
 
+
+---
+[Snapnote (2026)](https://platohe.github.io/snapnote/)
+<br>Lightning-fast, all-encompassing system for both **memory capture** and **content creation**. SnapNote consolidates text notes, while simultaneously providing a system-wide text expansion engine to accelerate writing and data entry.
+<br><img src="images/snapnote.png?raw=true" /><br><br>
+
 ---
 [Awesome Ideas! (2022)](https://platohe.github.io/idea/)
 <br>A collection of productivity tools, including bookmark management, notes taking, secret keeper - Let's Get Things Done!
