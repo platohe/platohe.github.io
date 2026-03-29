@@ -1,4 +1,4 @@
-Welcome to TaskFlow - your powerful task management companion! This guide covers every feature and aspect of TaskFlow to help you master productive task management.
+const e=`Welcome to TaskFlow - your powerful task management companion! This guide covers every feature and aspect of TaskFlow to help you master productive task management.
 
 ## 📚 Table of Contents
 
@@ -334,7 +334,7 @@ Personalize TaskFlow to match your workflow:
 #### TaskFlow File Format
 TaskFlow uses JSON format for maximum compatibility and flexibility:
 
-```json
+\`\`\`json
 {
   "tasks": [
     {
@@ -358,7 +358,7 @@ TaskFlow uses JSON format for maximum compatibility and flexibility:
     "theme": "light"
   }
 }
-```
+\`\`\`
 
 #### Task Object Properties
 - **id**: Unique numerical identifier
@@ -802,7 +802,7 @@ The main ribbon provides access to all major functions:
 ### File Format Reference
 
 #### Task Object Schema
-```json
+\`\`\`json
 {
   "id": "number",
   "title": "string (required)",
@@ -816,10 +816,10 @@ The main ribbon provides access to all major functions:
   "updatedAt": "string (ISO timestamp)",
   "completedAt": "string (ISO timestamp)"
 }
-```
+\`\`\`
 
 #### Settings Object Schema
-```json
+\`\`\`json
 {
   "lanes": "array of strings",
   "defaultPriority": "string",
@@ -828,7 +828,7 @@ The main ribbon provides access to all major functions:
   "notifications": "object",
   "viewPreferences": "object"
 }
-```
+\`\`\`
 
 ---
 
@@ -849,3 +849,4 @@ TaskFlow is designed to be your comprehensive task management solution, combinin
 - **Try Different Views**: Find the view that works best for each task type
 - **Set Up Notifications**: Configure reminders to stay on track
 - **Use Analytics**: Review your productivity patterns regularly
+`;export{e as default};

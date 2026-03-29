@@ -2,14 +2,16 @@ A modern web-based notes application. All notes are saved locally and fully sear
 
 ## Quick Start
 
-### New Note
-Create a quick note with title and content. Click the **New Note** button in the ribbon to get started.
+SnapNote automatically creates an empty note when you open the app. Just start typing to capture your ideas.
 
-### Open File
-Open an existing markdown or text file. Use the **Open File** button to browse your local files.
+### Import File
+Import an existing markdown or text file. Click the **Import** button (down arrow icon) in the ribbon to browse your local files.
+
+### Add Note
+Create additional notes with the **Add Note** button (+ icon) in the ribbon.
 
 ### Templates
-Use pre-built templates for daily notes, tasks, and more. Access templates via the ribbon once you have notes.
+Use pre-built templates for daily notes, tasks, and more. Access templates via the template manager button in the ribbon.
 
 ## Features
 
@@ -29,7 +31,7 @@ Filter by today, this week, recently modified, or untagged. Access these from th
 Auto-generated daily note templates with date. Press `Ctrl + Shift + D` to create a daily note instantly.
 
 ### Dark Mode
-Switch between light and dark themes anytime. Click the sun/moon icon in the top-right corner.
+Switch between light and dark themes anytime. Click the sun/moon icon in the top-right corner of the ribbon.
 
 ## View & Organization
 
@@ -64,7 +66,7 @@ Find notes without tags to help organize your collection.
 
 ## Getting Started
 
-Click **New Note** or **Open File** in the ribbon above to begin. Once you have notes, the sidebar will show Smart Filters and Tags for quick organization.
+SnapNote opens ready to use with an empty note. Start typing immediately, or click **Import** to bring in existing files. Once you have notes, the sidebar will show Smart Filters and Tags for quick organization.
 
 ---
 
