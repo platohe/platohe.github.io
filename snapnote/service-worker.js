@@ -3,10 +3,12 @@ const urlsToCache = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/src/main.jsx',
-  '/src/App.jsx',
-  '/src/index.css',
-  '/src/App.css'
+  '/snapnote-lightning.svg',
+  '/icons/icon-192.svg',
+  '/icons/icon-512.svg',
+  '/src/styles/fluent-theme.css',
+  '/src/styles/snapnote-layout.css',
+  '/src/index.css'
 ];
 
 self.addEventListener('install', (event) => {
