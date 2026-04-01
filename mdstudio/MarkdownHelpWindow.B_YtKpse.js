@@ -1,4 +1,4 @@
-import{r as i,j as e,I as H,o as M,O as z,T as O,B as A,K as W,n as q}from"./vendor-core.BRPijmiz.js";import{P as E}from"./index.DCa__qWQ.js";import{u as Y}from"./windowStatePersistence.B6k0w6ir.js";import"./vendor-processing.COD3lkR6.js";import"./vendor-utils.AceBcgTx.js";import"./vendor-documents.D59HDKb6.js";const I=`# Markdown Syntax Reference Guide
+import{r as i,j as e,I as H,o as M,O as z,T as O,B as A,K as W,n as q}from"./vendor-core.BRPijmiz.js";import{P as E}from"./index.BiKjoubP.js";import{u as Y}from"./windowStatePersistence.B6k0w6ir.js";import"./vendor-processing.COD3lkR6.js";import"./vendor-utils.AceBcgTx.js";import"./vendor-documents.D59HDKb6.js";const I=`# Markdown Syntax Reference Guide
 
 ## Table of Contents
 
