@@ -11,24 +11,24 @@
 
 ---
 [MarkdownStudio (2026)](https://platohe.github.io/mdstudio/)
-<br>MarkdownStudio is a distraction-free markdown writing tool; it's a local-first, file-based markdown editor with sophisticated ribbon interface reminiscent of professional desktop applications. Beyond basic editing, it includes advanced features like focus mode, typewriter mode, Zen mode, outline navigation, snippet management, search functionality, and multiple view modes including split-pane editing, making it a comprehensive productivity suite rather than just a simple markdown editor
+<br>A distraction-free markdown writing tool, it includes advanced features like focus mode, typewriter mode, Zen mode, outline navigation, snippet management, making it a comprehensive productivity suite rather than just a simple markdown editor
 <br><br><img src="images/mdstudio.png?raw=true" /><br><br>
 
 ---
 [TaskFlow (2026)](https://platohe.github.io/taskflow/)
-<br>Minimalist yet powerful task management system with natural language input ("submit report tomorrow at 2pm #work"), Kanban/Calendar views, project hierarchy.
+<br>A minimalist yet powerful task management system with natural language input ("submit report tomorrow at 2pm #work"), Kanban/Calendar views, project hierarchy.
 <br><br><img src="images/taskflow.png?raw=true" /><br><br>
 
 
 ---
 [VaultGuard (2026)](https://platohe.github.io/vaultguard/)
-<br>VaultGuard is a military-grade local password manager with zero-knowledge architecture. Your data never leaves your device and is protected with industry-standard AES-256 encryption.
+<br>A military-grade local password manager with zero-knowledge architecture, data never leaves your device and is protected with industry-standard encryption.
 <br><br><img src="images/vaultguard.png?raw=true" /><br><br>
 
 
 ---
 [Snapnote (2026)](https://platohe.github.io/snapnote/)
-<br>Lightning-fast, all-encompassing system for both memory capture and content creation. SnapNote consolidates text notes while simultaneously providing a system-wide text expansion engine to accelerate writing and data entry.
+<br>A fast, all-encompassing system for content capture and creation. It consolidates text notes while simultaneously providing a system-wide text expansion engine to accelerate writing and data entry.
 <br><img src="images/snapnote.png?raw=true" /><br><br>
 
 ---
