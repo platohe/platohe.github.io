@@ -1,5 +1,10 @@
 ## Most recent personal pojects
 ---
+[Studio (2026)](https://platohe.github.io/studio/)
+<br>STUDIO Suite was built to prove that you can have professional-grade tools without subscriptions, accounts, or cloud dependency. Every studio runs entirely in your browser, processes your files locally, and stores your data on your device.
+<br><br><img src="images/studio.png?raw=true" /><br><br>
+
+---
 [FileSight (2026)](https://platohe.github.io/filesight/)
 <br>A universal, extensible file viewer and action hub that accepts any file type and provides a viewer plus context-aware actions.
 <br><br><img src="images/filesight.png?raw=true" /><br><br>

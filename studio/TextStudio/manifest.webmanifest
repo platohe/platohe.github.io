@@ -1,0 +1,1 @@
+{"name":"textstudio","short_name":"textstudio","description":"TextStudio - VS Code-style plain text editor for the Nexus Suite","start_url":"/textstudio/","display":"standalone","background_color":"#ffffff","theme_color":"#42b883","lang":"en","scope":"/textstudio/","src":"manifest.json","inject":true,"registerType":"autoUpdate"}

@@ -1,0 +1,20 @@
+{
+  "name": "DataStudio — Data Transformation Pipeline",
+  "short_name": "DataStudio",
+  "description": "Universal data studio and transformation pipeline for encoding, hashing, formatting, and analysis.",
+  "start_url": "/data-studio/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1E293B",
+  "orientation": "any",
+  "scope": "/data-studio/",
+  "categories": ["productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/data-studio/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

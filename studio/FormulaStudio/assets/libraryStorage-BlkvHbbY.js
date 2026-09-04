@@ -1,0 +1,1 @@
+const i="formula-studio-library";function o(t){const e=n(),r=e.findIndex(s=>s.id===t.id);r>=0?e[r]=t:e.push(t),localStorage.setItem(i,JSON.stringify(e))}function n(){try{const t=localStorage.getItem(i);return t?JSON.parse(t):[]}catch{return[]}}function a(t){const r=n().filter(s=>s.id!==t);localStorage.setItem(i,JSON.stringify(r))}export{a as d,n as g,o as s};

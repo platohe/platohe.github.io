@@ -1,0 +1,1 @@
+import{S as e}from"./src-DfVJmg0Q.js";var t=e(),n=Math.PI/3,r=Math.PI*2/3;function i(e){var i;return e=(.5-e)*Math.PI,t.r=255*(i=Math.sin(e))*i,t.g=255*(i=Math.sin(e+n))*i,t.b=255*(i=Math.sin(e+r))*i,t+``}export{i as t};
