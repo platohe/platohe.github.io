@@ -27,6 +27,15 @@ window.TOOLS_CONFIG = [
     "path": "PresentationStudio"
   },
   {
+    "name": "Note |STUDIO",
+    "description": "Microsoft OneNote-inspired digital notebook with notebooks, sections, and rich canvas notes.",
+    "category": "Office",
+    "icons": "📓",
+    "show": true,
+    "dir": "NoteStudio",
+    "path": "NoteStudio"
+  },
+  {
     "name": "PDF |STUDIO",
     "description": "Adobe Acrobat-inspired PDF editor, page management, PDF annotations, digital signatures, and forms.",
     "category": "Office",
@@ -58,7 +67,7 @@ window.TOOLS_CONFIG = [
     "description": "Professional audio editor with waveform visualization, multi-track mixing, and sound analysis.",
     "category": "Media",
     "icons": "🎵",
-    "show": true,
+    "show": false,
     "dir": "AudioStudio",
     "path": "AudioStudio"
   },
@@ -85,7 +94,7 @@ window.TOOLS_CONFIG = [
     "description": "Infinite canvas graphic design, vector illustration, mind maps, and collaborative whiteboard.",
     "category": "Design",
     "icons": "🎨",
-    "show": true,
+    "show": false,
     "dir": "CanvasStudio",
     "path": "CanvasStudio"
   },
@@ -103,18 +112,9 @@ window.TOOLS_CONFIG = [
     "description": "Advanced LaTeX mathematical formula editor, equation rendering, and scientific symbol palettes.",
     "category": "Engineering",
     "icons": "∑",
-    "show": true,
+    "show": false,
     "dir": "FormulaStudio",
     "path": "FormulaStudio"
-  },
-  {
-    "name": "Note |STUDIO",
-    "description": "Microsoft OneNote-inspired digital notebook with notebooks, sections, and rich canvas notes.",
-    "category": "Office",
-    "icons": "📓",
-    "show": true,
-    "dir": "NoteStudio",
-    "path": "NoteStudio"
   },
   {
     "name": "SnapNote",
