@@ -123,7 +123,7 @@ window.TOOLS_CONFIG = [
     "icons": "⚡",
     "show": true,
     "dir": "snapnote",
-    "path": "SnapNote"
+    "path": "snapnote"
   },
   {
     "name": "Sync |STUDIO",
@@ -141,7 +141,7 @@ window.TOOLS_CONFIG = [
     "icons": "✅",
     "show": true,
     "dir": "taskflow",
-    "path": "TaskFlow"
+    "path": "taskflow"
   },
   {
     "name": "Secret |STUDIO",
@@ -150,7 +150,7 @@ window.TOOLS_CONFIG = [
     "icons": "🔐",
     "show": true,
     "dir": "vaultguard",
-    "path": "VaultGuard"
+    "path": "vaultguard"
   },
   {
     "name": "Visualization |STUDIO",
