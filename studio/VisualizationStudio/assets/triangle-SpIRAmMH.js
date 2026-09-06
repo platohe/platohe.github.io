@@ -1,0 +1,1 @@
+import{f as e}from"./math-Bi_r_ZWc.js";var t=e(3),n={draw(n,r){let i=-e(r/(t*3));n.moveTo(0,i*2),n.lineTo(-t*i,-i),n.lineTo(t*i,-i),n.closePath()}};export{n as t};

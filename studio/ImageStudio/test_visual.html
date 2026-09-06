@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ImageStudio - Visual Style Test</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 20px; background: #1a1a1a; color: #eee; }
+  h1 { font-size: 20px; margin-bottom: 5px; }
+  p.sub { color: #999; margin-top: 0; font-size: 13px; }
+  #controls { margin: 16px 0; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  #controls select, #controls button { padding: 6px 12px; font-size: 13px; }
+  #fileInput { display: none; }
+  #gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; }
+  .card { background: #2a2a2a; border-radius: 6px; overflow: hidden; cursor: pointer; }
+  .card canvas { width: 100%; display: block; }
+  .card .label { padding: 3px 6px; font-size: 10px; color: #ccc; display: flex; justify-content: space-between; }
+  .card .time { color: #888; font-size: 10px; }
+  .category-header { grid-column: 1 / -1; color: #8af; font-size: 13px; font-weight: 600; padding: 16px 0 4px 0; border-bottom: 1px solid #333; margin-bottom: 8px; }
+  #status { padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; font-size: 13px; }
+  .loading { background: #2a4a2a; }
+  .done { background: #2a3a2a; }
+  .error { background: #4a2a2a; }
+  #popup-overlay { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; }
+  #popup-overlay.show { display: flex; }
+  #popup-container { position: relative; max-width: 95vw; max-height: 95vh; background: #111; border-radius: 8px; box-shadow: 0 8px 40px rgba(0,0,0,0.6); display: flex; flex-direction: column; }
+  #popup-canvas-wrap { overflow: auto; flex: 1; display: flex; justify-content: center; align-items: flex-start; }
+  #popup-container canvas { display: block; }
+  #popup-nav { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; gap: 12px; }
+  #popup-nav button { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 6px 16px; border-radius: 4px; cursor: pointer; font-size: 14px; }
+  #popup-nav button:hover { background: rgba(255,255,255,0.2); }
+  #popup-nav button:disabled { opacity: 0.3; cursor: default; }
+  #popup-nav .counter { font-size: 12px; color: #999; }
+  #popup-close { position: fixed; top: 16px; right: 24px; font-size: 28px; color: #fff; cursor: pointer; opacity: 0.7; background: none; border: none; z-index: 10000; }
+  #popup-close:hover { opacity: 1; }
+  #popup-info { position: absolute; top: 8px; left: 12px; font-size: 13px; color: #ccc; background: rgba(0,0,0,0.6); padding: 4px 10px; border-radius: 4px; pointer-events: none; }
+</style>
+</head>
+<body>
+<h1>🎨 ImageStudio — Algorithmic Style Test</h1>
+<p class="sub">Tests all algorithmic styles on a selected image. Results are deterministic (no randomness).</p>
+
+<div id="controls">
+  <select id="imageSelect">
+    <option value="/images/test_images/girl.png">girl.png (portrait)</option>
+    <option value="/images/test_images/bike.jpg">bike.jpg (outdoor)</option>
+    <option value="/images/test_images/boat.jpg">boat.jpg (landscape)</option>
+    <option value="/images/test_images/horse.jpg">horse.jpg (animal)</option>
+    <option value="/images/test_images/vangogh.jpeg">vangogh.jpeg (artwork)</option>
+    <option value="/images/test_images/sailboat3.jpg">sailboat3.jpg (sea)</option>
+    <option value="/test_photo.png">test_photo.png (test)</option>
+    <option value="/test.jpg">test.jpg (test)</option>
+    <option value="/portrait.jpg">portrait.jpg (test)</option>
+  </select>
+  <button id="openBtn">📁 Open Image</button>
+  <input type="file" id="fileInput" accept="image/*">
+  <button id="runBtn">▶ Run All Styles</button>
+  <span id="statusText" style="font-size:13px;color:#888;"></span>
+</div>
+
+<div id="gallery"></div>
+
+<div id="popup-overlay">
+  <div id="popup-container">
+    <div id="popup-info"></div>
+    <div id="popup-canvas-wrap">
+      <canvas id="popup-canvas"></canvas>
+    </div>
+    <div id="popup-nav">
+      <button id="popup-prev">◀ Prev</button>
+      <span class="counter" id="popup-counter"></span>
+      <button id="popup-next">Next ▶</button>
+    </div>
+  </div>
+  <button id="popup-close">&times;</button>
+</div>
+
+<script type="module">
+import tensorflowStyleTransfer from '/src/services/TensorFlowStyleTransfer.js';
+
+const STYLE_CATEGORIES = [
+  {
+    category: 'East Asian Ink & Wash',
+    items: ['chinese-ink', 'shan-shui', 'splash-ink', 'xieyi', 'literati', 'gongbi', 'figure', 'flower-bird', 'calligraphy', 'ukiyo-e']
+  },
+  {
+    category: 'Western Painting & Drawing',
+    items: ['pencil-sketch', 'oil-painting', 'watercolor', 'gouache', 'acrylic', 'pastel', 'crayon', 'marker', 'charcoal', 'etching', 'lithograph']
+  },
+  {
+    category: 'Modern & Digital Aesthetics',
+    items: ['impressionist', 'pointillism', 'expressionism', 'surrealism', 'pop-art', 'retro-poster', 'comic', 'minimalist-line-art', 'flat-illustration', 'neon-glow', 'pixel-art', 'pixel-art-bw', 'cyberpunk']
+  },
+  {
+    category: 'Technical Effects',
+    items: ['ink-bleed', 'dithering', 'paper-texture', 'sobel-edge', 'mosaic', 'deblur', 'blueprint', 'posterize', 'halftone', 'glitch', 'emboss', 'bloom', 'mosaic-tile']
+  },
+  {
+    category: 'Printmaking & Relief',
+    items: ['woodcut', 'linocut', 'screen-print', 'risograph', 'mezzotint', 'aquatint']
+  },
+  {
+    category: 'Ancient & Classical Art',
+    items: ['fresco', 'tempera', 'encaustic', 'stained-glass', 'byzantine-icon', 'illuminated-manuscript', 'celtic-knotwork', 'islamic-geometric', 'aboriginal-dot', 'greek-pottery']
+  },
+  {
+    category: 'Drawing & Illustration',
+    items: ['cross-hatching', 'stippling', 'scratchboard', 'dry-brush']
+  },
+  {
+    category: 'Art Movements',
+    items: ['art-nouveau', 'art-deco', 'de-stijl', 'memphis', 'op-art', 'psychedelic', 'bauhaus', 'dada-collage']
+  },
+  {
+    category: 'Photography & Film',
+    items: ['double-exposure', 'light-leak', 'cross-process', 'solarization', 'split-tone', 'selective-color', 'bleach-bypass', 'orton-effect', 'wet-plate', 'polaroid', 'cinestill']
+  },
+  {
+    category: 'Design & Digital',
+    items: ['glassmorphism', 'chrome', 'holographic', 'neon-sign', 'marbling', 'terrazzo']
+  },
+  {
+    category: 'Special Filters',
+    items: ['kuwahara', 'xdog', 'palette-quantize', 'chromatic-aberration', 'motion-blur', 'bokeh', 'heat-distortion']
+  }
+];
+
+const ALL_STYLES = STYLE_CATEGORIES.flatMap(c => c.items);
+
+async function init() {
+  document.getElementById('runBtn').addEventListener('click', runAll);
+  document.getElementById('imageSelect').addEventListener('change', () => {
+    document.getElementById('gallery').innerHTML = '';
+  });
+  const saved = sessionStorage.getItem('testImage');
+  if (saved) document.getElementById('imageSelect').value = saved;
+
+  document.getElementById('openBtn').addEventListener('click', () => {
+    document.getElementById('fileInput').click();
+  });
+  document.getElementById('fileInput').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const url = URL.createObjectURL(file);
+    const sel = document.getElementById('imageSelect');
+    const opt = document.createElement('option');
+    opt.value = url;
+    opt.textContent = `📄 ${file.name}`;
+    opt.selected = true;
+    sel.prepend(opt);
+    sessionStorage.setItem('testImage', url);
+    runAll();
+  });
+}
+
+let allCards = [];
+let currentPopupIndex = -1;
+let currentZoom = 1;
+let currentNaturalW = 0;
+let currentNaturalH = 0;
+
+function applyZoom() {
+  const cvs = document.getElementById('popup-canvas');
+  const info = document.getElementById('popup-info');
+  const card = allCards[currentPopupIndex];
+  if (!card) return;
+  const w = Math.round(currentNaturalW * currentZoom);
+  const h = Math.round(currentNaturalH * currentZoom);
+  cvs.style.width = w + 'px';
+  cvs.style.height = h + 'px';
+  info.textContent = `${card._styleName} (${Math.round(currentZoom * 100)}%)`;
+}
+
+function showPopupAtIndex(index) {
+  if (index < 0 || index >= allCards.length) return;
+  currentPopupIndex = index;
+  const card = allCards[index];
+  const resultCanvas = card._fullResult;
+  if (!resultCanvas) return;
+
+  const overlay = document.getElementById('popup-overlay');
+  const cvs = document.getElementById('popup-canvas');
+  const info = document.getElementById('popup-info');
+  const counter = document.getElementById('popup-counter');
+  const prevBtn = document.getElementById('popup-prev');
+  const nextBtn = document.getElementById('popup-next');
+
+  currentNaturalW = resultCanvas.width;
+  currentNaturalH = resultCanvas.height;
+
+  cvs.width = currentNaturalW;
+  cvs.height = currentNaturalH;
+  const ctx = cvs.getContext('2d');
+  ctx.drawImage(resultCanvas, 0, 0);
+
+  const navH = 50;
+  const pad = 40;
+  const availW = window.innerWidth - pad;
+  const availH = window.innerHeight - navH - pad;
+  currentZoom = 1;
+  if (currentNaturalW > availW || currentNaturalH > availH) {
+    currentZoom = Math.min(availW / currentNaturalW, availH / currentNaturalH);
+  }
+  applyZoom();
+
+  counter.textContent = `${index + 1} / ${allCards.length}`;
+  prevBtn.disabled = index <= 0;
+  nextBtn.disabled = index >= allCards.length - 1;
+  overlay.classList.add('show');
+}
+
+function hideFullImage() {
+  document.getElementById('popup-overlay').classList.remove('show');
+  currentPopupIndex = -1;
+}
+
+document.getElementById('popup-prev').addEventListener('click', () => showPopupAtIndex(currentPopupIndex - 1));
+document.getElementById('popup-next').addEventListener('click', () => showPopupAtIndex(currentPopupIndex + 1));
+document.getElementById('popup-overlay').addEventListener('click', (e) => {
+  if (e.target === e.currentTarget || e.target.id === 'popup-close') hideFullImage();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') hideFullImage();
+  if (e.key === 'ArrowLeft' && currentPopupIndex > 0) showPopupAtIndex(currentPopupIndex - 1);
+  if (e.key === 'ArrowRight' && currentPopupIndex < allCards.length - 1) showPopupAtIndex(currentPopupIndex + 1);
+});
+document.getElementById('popup-canvas-wrap').addEventListener('wheel', (e) => {
+  if (currentPopupIndex < 0) return;
+  e.preventDefault();
+  const delta = e.deltaY > 0 ? 0.9 : 1.1;
+  currentZoom = Math.max(0.1, Math.min(10, currentZoom * delta));
+  applyZoom();
+}, { passive: false });
+
+async function runAll() {
+  const sel = document.getElementById('imageSelect');
+  const src = sel.value;
+  sessionStorage.setItem('testImage', src);
+  const gallery = document.getElementById('gallery');
+  const status = document.getElementById('statusText');
+  gallery.innerHTML = '';
+  hideFullImage();
+  status.textContent = 'Loading image...';
+  await new Promise(r => requestAnimationFrame(r));
+
+  const img = new Image();
+  img.crossOrigin = 'anonymous';
+  await new Promise((resolve, reject) => {
+    img.onload = resolve;
+    img.onerror = () => reject(new Error('Failed to load: ' + src));
+    img.src = src;
+  });
+
+  status.textContent = `Loaded ${img.naturalWidth}×${img.naturalHeight}. Running ${ALL_STYLES.length} styles...`;
+
+  allCards = [];
+
+  const totalStart = performance.now();
+  let globalIdx = 0;
+
+  for (const cat of STYLE_CATEGORIES) {
+    const header = document.createElement('div');
+    header.className = 'category-header';
+    header.textContent = cat.category;
+    gallery.appendChild(header);
+
+    for (const name of cat.items) {
+      const i = globalIdx;
+      status.textContent = `[${globalIdx + 1}/${ALL_STYLES.length}] ${name}...`;
+
+      const card = document.createElement('div');
+      card.className = 'card';
+      card._styleName = name;
+      card._index = i;
+      const label = document.createElement('div');
+      label.className = 'label';
+      label.innerHTML = `<span>${name}</span><span class="time">...</span>`;
+      card.appendChild(label);
+      const cvs = document.createElement('canvas');
+      cvs.width = 156;
+      cvs.height = 117;
+      card.appendChild(cvs);
+      card._thumbnailCanvas = cvs;
+      card.addEventListener('click', () => showPopupAtIndex(i));
+      allCards.push(card);
+      gallery.appendChild(card);
+
+      await new Promise(r => requestAnimationFrame(r));
+
+      const start = performance.now();
+      try {
+        const result = await tensorflowStyleTransfer.applyStyleTransfer(img, name);
+        card._fullResult = result;
+        const ctx = cvs.getContext('2d');
+        const rw = result.width || result.naturalWidth || 156;
+        const rh = result.height || result.naturalHeight || 117;
+        const scale = Math.min(156 / rw, 117 / rh);
+        const dw = rw * scale, dh = rh * scale;
+        const dx = (156 - dw) / 2, dy = (117 - dh) / 2;
+        ctx.fillStyle = '#111';
+        ctx.fillRect(0, 0, 156, 117);
+        ctx.drawImage(result, dx, dy, dw, dh);
+        label.querySelector('.time').textContent = `${(performance.now() - start).toFixed(0)}ms`;
+      } catch (e) {
+        label.innerHTML = `<span>${name}</span><span class="time" style="color:#f66">ERR</span>`;
+        console.error(`[${name}]`, e);
+      }
+      globalIdx++;
+    }
+  }
+
+  const totalTime = ((performance.now() - totalStart) / 1000).toFixed(1);
+  status.textContent = `Done — ${ALL_STYLES.length} styles in ${totalTime}s`;
+}
+
+init().catch(e => {
+  document.getElementById('statusText').textContent = 'Init error: ' + e.message;
+  console.error(e);
+});
+</script>
+</body>
+</html>
