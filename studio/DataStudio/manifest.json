@@ -1,6 +1,6 @@
 {
-  "name": "DataStudio — Data Transformation Pipeline",
-  "short_name": "DataStudio",
+  "name": "data |STUDIO — Data Transformation Pipeline",
+  "short_name": "data |STUDIO",
   "description": "Universal data studio and transformation pipeline for encoding, hashing, formatting, and analysis.",
   "start_url": "/data-studio/",
   "display": "standalone",

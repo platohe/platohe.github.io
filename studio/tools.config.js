@@ -76,7 +76,7 @@ window.TOOLS_CONFIG = [
     "description": "Image manipulation, filters, photo enhancements, batch conversion, and layer composition.",
     "category": "Media",
     "icons": "🖼️",
-    "show": true,
+    "show": false,
     "dir": "ImageStudio",
     "path": "ImageStudio"
   },
