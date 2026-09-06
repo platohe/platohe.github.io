@@ -1,1 +1,0 @@
-import{t as e}from"./transpose-Cd0SXdl6.js";function t(){return e(arguments)}export{t};

@@ -1,1 +1,0 @@
-var e=Math.random,t=(function e(t){function n(e,n){var r,i;return e=e==null?0:+e,n=n==null?1:+n,function(){var a;if(r!=null)a=r,r=null;else do r=t()*2-1,a=t()*2-1,i=r*r+a*a;while(!i||i>1);return e+n*a*Math.sqrt(-2*Math.log(i)/i)}}return n.source=e,n})(e);export{e as n,t};
