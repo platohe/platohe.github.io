@@ -93,7 +93,7 @@ self.addEventListener('push', (event) => {
     }
 
     event.waitUntil(
-        self.registration.showNotification('TextStudio', options)
+        self.registration.showNotification('text |STUDIO', options)
     )
 })
 

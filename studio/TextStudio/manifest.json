@@ -1,6 +1,6 @@
 {
-    "name": "TextStudio",
-    "short_name": "TextStudio",
+    "name": "text |STUDIO",
+    "short_name": "text |STUDIO",
     "description": "Privacy-first plain text editor for writers. Runs offline, no cloud required.",
     "start_url": "/",
     "display": "standalone",
