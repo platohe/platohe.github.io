@@ -1,0 +1,12 @@
+var e=`# LOLLERSKATES
+$the_cow = <<EOC;
+   $thoughts
+    $thoughts
+        /\\\\O
+         /\\\\/
+        /\\\\
+       /  \\\\
+      LOL LOL
+:-D LOLLERSKATES :-D
+EOC
+`;export{e as default};

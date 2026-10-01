@@ -1,0 +1,17 @@
+var e=`# Rook (Chess piece)
+#
+# from http://www.chessvariants.org/d.pieces/ascii.html
+#   by David Moeser
+#
+$the_cow = <<EOC;
+ $thoughts
+  $thoughts
+
+   WWWWWW
+    |  |
+    |  |
+    |__|
+   /____\\\\
+  (______)
+EOC
+`;export{e as default};

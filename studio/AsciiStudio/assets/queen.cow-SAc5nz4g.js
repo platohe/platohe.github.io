@@ -1,0 +1,20 @@
+var e=`# Queen (Chess piece)
+#
+# from http://www.chessvariants.org/d.pieces/ascii.html
+#   by David Moeser
+#
+$the_cow = <<EOC;
+ $thoughts
+  $thoughts
+     ()
+   <~~~~>
+    \\\\__/
+   (____)
+    |  |
+    |  |
+    |__|
+   /____\\\\
+  (______)
+ (________)
+EOC
+`;export{e as default};

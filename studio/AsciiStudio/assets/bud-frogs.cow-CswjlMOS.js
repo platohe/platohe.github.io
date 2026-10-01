@@ -1,0 +1,13 @@
+var e=`##
+## The Budweiser frogs
+##
+$the_cow = <<EOC;
+     $thoughts
+      $thoughts
+          oO)-.                       .-(Oo
+         /__  _\\\\                     /_  __\\\\
+         \\\\  \\\\(  |     ()~()         |  )/  /
+          \\\\__|\\\\ |    (-___-)        | /|__/
+          '  '--'    ==\\-'==        '--'  '
+EOC
+`;export{e as default};

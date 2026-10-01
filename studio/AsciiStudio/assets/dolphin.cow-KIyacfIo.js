@@ -1,0 +1,13 @@
+var e=`# dolphin (tiny)
+#
+# from http://www.chris.com/ascii/index.php?art=animals/other%20(water)
+$the_cow = <<EOC;
+     $thoughts
+      $thoughts
+               ,
+             __)\\\\_  
+       (\\_.-'    a\\-.
+       (/~~\\\\\\\\(/~^^\\ 
+
+EOC
+`;export{e as default};

@@ -1,0 +1,14 @@
+var e=`#
+#	CodeGoat.io: https://github.com/danyshaanan/goatsay
+#
+$the_cow = <<EOC;
+        $thoughts
+         $thoughts
+          )__(
+         '|$eyes|'________/
+          |__|         |
+           $tongue||"""""""||
+             ||       ||
+
+EOC
+`;export{e as default};

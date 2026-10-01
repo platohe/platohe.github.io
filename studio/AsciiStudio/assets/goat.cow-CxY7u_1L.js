@@ -1,0 +1,19 @@
+var e=`##
+## ejm97 http://www.ascii-art.de/ascii/ghi/goat.txt
+##
+$the_cow = <<EOC;
+       $thoughts
+        $thoughts
+         $thoughts  _))
+           > $eye\\\\     _~
+           \\;'\\\\\\\\__-' \\\\_
+              | )  _ \\\\ \\\\
+             / / \\\\   w w
+            w w
+EOC
+
+
+
+
+
+`;export{e as default};

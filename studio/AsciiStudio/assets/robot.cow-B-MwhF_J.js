@@ -1,0 +1,15 @@
+var e=`# Robot
+#
+# based on rfksay by Andrew Northern
+# http://robotfindskitten.org/aw.cgi?main=software.rfk#rfksay
+#
+$the_cow = <<EOC;
+  $thoughts
+   $thoughts
+
+     [-]
+     (+)=C
+     | |
+     OOO
+EOC
+`;export{e as default};

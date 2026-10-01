@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta
+      name="description"
+      content="ASCII Studio — Create text banners, convert images to ASCII art, browse emoticons, and explore text-based digital creativity."
+    />
+    <link rel="apple-touch-icon" href="./logo192.png" />
+    <link rel="manifest" href="./manifest.json" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ASCII Studio" />
+    <meta property="og:description" content="Create, learn, and explore ASCII art" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://asciiart.example.com" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ASCII Studio" />
+    <meta name="twitter:description" content="The ultimate ASCII art creation studio" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "ASCII Studio",
+      "description": "The ultimate ASCII art creation portal",
+      "url": "https://asciiart.example.com"
+    }
+    </script>
+
+    <title>ASCII Studio — Terminal Studio</title>
+    <!-- Buffer polyfill for figlet font modules that use Buffer.from() in the browser -->
+    <script>
+      if (typeof window.Buffer === 'undefined') {
+        window.Buffer = {
+          from: function (data, encoding) {
+            if (encoding === 'base64') {
+              var binaryStr = atob(data);
+              var bytes = new Uint8Array(binaryStr.length);
+              for (var i = 0; i < binaryStr.length; i++) {
+                bytes[i] = binaryStr.charCodeAt(i);
+              }
+              return {
+                toString: function (enc) {
+                  if (enc === 'utf8' || 'utf-8') {
+                    return new TextDecoder().decode(bytes);
+                  }
+                  return data;
+                },
+              };
+            }
+            return { toString: function () { return String(data); } };
+          },
+        };
+      }
+    </script>
+    <script type="module" crossorigin src="./assets/index-BSBlQH4v.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/clipboard-RCGfH8g4.js">
+    <link rel="modulepreload" crossorigin href="./assets/pickAttrs-Bc9Uosqw.js">
+    <link rel="modulepreload" crossorigin href="./assets/slide-CGrxiRS5.js">
+    <link rel="modulepreload" crossorigin href="./assets/PurePanel-BT5RJOUk.js">
+    <link rel="modulepreload" crossorigin href="./assets/fade--FmUBNDR.js">
+    <link rel="modulepreload" crossorigin href="./assets/slider-DR49E2dW.js">
+    <link rel="modulepreload" crossorigin href="./assets/notification-DF_l4TIC.js">
+    <link rel="modulepreload" crossorigin href="./assets/tag-DWZYmQYu.js">
+    <link rel="modulepreload" crossorigin href="./assets/SplitterBar-BPGIMYNR.js">
+    <link rel="modulepreload" crossorigin href="./assets/ToolTagGroup-6V-Wx-7_.js">
+    <link rel="stylesheet" crossorigin href="./assets/ToolTagGroup-CzoDPVGJ.css">
+    <link rel="stylesheet" crossorigin href="./assets/index-Cm06Mg7M.css">
+    <link rel="stylesheet" crossorigin href="./assets/src-CAl_U6uc.css">
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>

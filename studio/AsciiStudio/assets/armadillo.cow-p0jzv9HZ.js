@@ -1,0 +1,16 @@
+var e=`# armadillo
+#
+# based on http://ascii.co.uk/art/armadillo
+$the_cow = <<EOC;
+         $thoughts
+          $thoughts
+               ,.-----__
+            ,:::://///,:::-.
+           /:''/////// \\\\:::\\;/|/
+          /'   ||||||     :://'\\\\\\
+        .' ,   ||||||     \\/(  e \\\\
+  -===~__-'\\\\__X_\\\\\\\\\\\\\\_____/~\\-._ \\.
+              ~~        ~~       \\~-'
+EOC
+
+`;export{e as default};

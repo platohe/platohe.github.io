@@ -1,0 +1,18 @@
+var e=`# Bishop (Chess piece)
+#
+# from http://www.chessvariants.org/d.pieces/ascii.html
+#   by David Moeser
+#
+$the_cow = <<EOC;
+ $thoughts
+  $thoughts
+    <>_
+  (\\\\)  )
+   \\\\__/
+  (____)
+   |  |
+   |__|
+  /____\\\\
+ (______)
+EOC
+`;export{e as default};

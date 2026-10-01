@@ -1,0 +1,19 @@
+var e=`# seahorse
+#
+# adapted from http://www.chris.com/ascii/index.php?art=animals/other%20(water)
+$the_cow = <<EOC;
+   $thoughts
+    $thoughts
+
+      (\\\\(\\\\/
+  .-._)oo  '_
+  \\'---.     .\\'\\\\
+       )    \\\\.-\\'\\\\
+      /__ ;     (
+      |__ : /'._/
+       \\\\_  (
+       .,)  )
+       \\'-.-\\'
+
+EOC
+`;export{e as default};

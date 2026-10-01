@@ -1,0 +1,11 @@
+var e=`##
+## A mutilated cow, from aspolito@csua.berkeley.edu
+##
+$the_cow = <<EOC;
+       $thoughts   \\\\_______
+ v__v   $thoughts  \\\\   O   )
+ ($eyes)      ||----w |
+ (__)      ||     ||  \\\\/\\\\
+  $tongue
+EOC
+`;export{e as default};

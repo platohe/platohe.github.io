@@ -1,0 +1,17 @@
+var e=`##
+## A cow with a bong, from lars@csua.berkeley.edu
+##
+$the_cow = <<EOC;
+         $thoughts
+          $thoughts
+            ^__^ 
+    _______/($eyes)
+/\\\\/(       /(__)
+   | W----|| |~|
+   ||     || |~|  ~~
+             |~|  ~
+             |_| o
+             |#|/
+            _+#+_
+EOC
+`;export{e as default};

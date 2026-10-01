@@ -1,0 +1,11 @@
+var e=`# fatter banana
+# via https://www.reddit.com/r/cowsay/comments/3bkpwv/any_love_for_bananasay/
+$the_cow = <<EOC;
+           $thoughts
+            $thoughts
+        "-.. __      __.='>
+         \\.     """""   ,'
+           "-..__   _.-"
+   ~ ~~ ~ ~  ~   """  ~~  ~
+EOC
+`;export{e as default};

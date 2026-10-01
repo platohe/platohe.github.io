@@ -1,0 +1,18 @@
+var e=`##
+## acsii picture from http://www.ascii-art.de/ascii/ab/bear.txt
+##
+$the_cow = <<EOC;
+ $thoughts
+  $thoughts
+     .--.              .--.
+    : (\\\\ ". _......_ ." /) :
+     '.    \\        \\    .'
+      /'   _        _   \\\\\\
+     /     $eye}      {$eye     \\\\
+    |       /      \\\\       |
+    |     /'        \\\\\\     |
+     \\\\   | .  .==.  . |   /
+      '._ \\\\.' \\\\__/ './ _.'
+      /  \\\\'._-''-_.'\\\\  \\\\
+EOC
+`;export{e as default};

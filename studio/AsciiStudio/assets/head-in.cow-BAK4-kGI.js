@@ -1,0 +1,13 @@
+var e=`##
+## Go stick yer head in a cow.
+##
+$the_cow = <<EOC;
+    $thoughts
+     $thoughts
+    ^__^         /
+    ($eyes)\\\\_______/  _________
+    (__)\\\\       )=(  ____|_ \\\\_____
+   $tongue   ||----w |  \\\\ \\\\     \\\\_____ |
+        ||     ||   ||           ||
+EOC
+`;export{e as default};

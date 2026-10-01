@@ -46,7 +46,7 @@
   },
   {
     "name": "sprint |STUDIO",
-    "description": "Sprint planning and management tool with task tracking, burndown charts, and team collaboration.",
+    "description": "Jira-inspired sprint planning and management tool with task tracking, burndown charts, and team collaboration.",
     "category": "Productivity",
     "icons": "🏃",
     "show": true,
@@ -55,8 +55,8 @@
   },
   {
     "name": "web |STUDIO",
-    "description": "Web browser-based development environment with integrated tools for building and testing web applications.",
-    "category": "Development",
+    "description": "Confluence-inspired web browser-based development environment with integrated tools for building and testing web applications.",
+    "category": "Productivity",
     "icons": "🌐",
     "show": true,
     "dir": "WebStudio",
@@ -64,8 +64,8 @@
   },
   {
     "name": "text |STUDIO",
-    "description": "VS Code-grade Monaco code and text editor with syntax highlighting, mini-map, and command palette.",
-    "category": "Development",
+    "description": "VS Code-inspired text editor with mini-map, and command palette.",
+    "category": "Productivity",
     "icons": "💻",
     "show": true,
     "dir": "TextStudio",
@@ -90,7 +90,7 @@
     "path": "AudioStudio"
   },
   {
-    "name": "image |STUDIO",
+    "name": "photo |STUDIO",
     "description": "Image manipulation, filters, photo enhancements, batch conversion, and layer composition.",
     "category": "Media",
     "icons": "🖼️",
