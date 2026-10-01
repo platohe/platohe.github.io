@@ -1,0 +1,1 @@
+import{r as e}from"./stack-DSXTHC0f.js";function t(t,n){if((a=t.length)>0){for(var r=0,i=t[n[0]],a,o=i.length;r<o;++r){for(var s=0,c=0;s<a;++s)c+=t[s][r][1]||0;i[r][1]+=i[r][0]=-c/2}e(t,n)}}export{t};

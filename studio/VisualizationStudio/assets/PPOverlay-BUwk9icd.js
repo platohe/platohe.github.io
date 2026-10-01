@@ -1,0 +1,47 @@
+var e=`import { useEffect, useRef } from 'react'\r
+import * as d3 from 'd3'\r
+import { W, H, colors } from './utils'\r
+export const meta = {\r
+  id: 'ppoverlay',\r
+  title: 'P P Overlay',\r
+  desc: 'P P Overlay — a bars chart visualization',\r
+  category: 'Bars',\r
+  component: 'PPOverlay',\r
+  complexity: 'beginner',\r
+  interactivity: ["none"],\r
+  d3Api: ["d3-scale"],\r
+  tags: ["bars","p-p-overlay"],\r
+}\r
+\r
+export default function PPOverlay({ data: customData }) {\r
+  const ref=useRef(null)\r
+  useEffect(()=>{\r
+    const svg=d3.select(ref.current); svg.selectAll('*').remove()\r
+    const groups=['A','B','C']\r
+    const gen = () => [{"group":"A","vals":[29.57,38.451,18.059,27.169,35.117,57.972,38.509,18.577,33.342,6,49.349,55.044,61.556,46.991,56.429,55.394,47.646,23.326,73.6,30.447,28.715,34.401,48.387,46.295,36.497,26.111,38.01,46.282,37.984,44.915,69.126,23.551]},{"group":"B","vals":[68.403,52.419,57.158,62.636,64.486,84.729,70.047,43.203,42.225,55.479,38.696,55.43,59.099,41.829,74.346,53.719,65.456,30.045,63.574,59.329,54.651,38.776,44.049,63.13,67.489,63.125,70.05,53.192,54.869,66.807,59.454,44.974]},{"group":"C","vals":[74.863,49.192,48.745,70.864,74.573,65.698,63.798,48.311,35.757,45.297,42.917,49.15,40.179,39.898,41.917,43.331,54.119,43.699,65.995,71.094,55.579,40.548,61.14,44.205,68.935,59.929,46.161,33.292,54.196,34.881,49.704,55.954]}]\r
+    const series=Array.isArray(customData)&&customData.length&&customData[0].vals?customData:gen()\r
+    const margin={top:28,right:14,bottom:24,left:36}\r
+    const width=W-margin.left-margin.right, height=H-margin.top-margin.bottom\r
+    const x=d3.scaleLinear().domain([0,1]).range([0,width])\r
+    const y=d3.scaleLinear().domain([0,1]).range([height,0])\r
+    const g=svg.append('g').attr('transform',\`translate(\${margin.left},\${margin.top})\`)\r
+    g.append('g').attr('transform',\`translate(0,\${height})\`).call(d3.axisBottom(x).ticks(5).tickFormat(d3.format('.0%')).tickSize(-height).tickPadding(6))\r
+      .call(g2=>g2.select('.domain').attr('stroke','var(--border)')).call(g2=>g2.selectAll('.tick line').attr('stroke','var(--border)').attr('stroke-dasharray','2,3'))\r
+      .call(g2=>g2.selectAll('text').attr('fill','var(--text-secondary)').attr('font-size','7px'))\r
+    g.append('g').call(d3.axisLeft(y).ticks(4).tickFormat(d3.format('.0%')).tickSize(-width).tickPadding(6))\r
+      .call(g2=>g2.select('.domain').remove()).call(g2=>g2.selectAll('.tick line').attr('stroke','var(--border)').attr('stroke-dasharray','2,3'))\r
+      .call(g2=>g2.selectAll('text').attr('fill','var(--text-secondary)').attr('font-size','7px'))\r
+    g.append('line').attr('x1',x(0)).attr('x2',x(1)).attr('y1',y(0)).attr('y2',y(1)).attr('stroke','#94a3b8').attr('stroke-dasharray','3,3')\r
+    series.forEach((s,i)=>{\r
+      const sorted=[...s.vals].sort(d3.ascending)\r
+      const pts=sorted.map((v,idx)=>({th: 0.5+ (v-50)/40, emp:(idx+1)/sorted.length}))\r
+      // clamp\r
+      pts.forEach(p=>{ p.th=Math.max(0,Math.min(1,p.th)) })\r
+      g.append('path').datum(pts).attr('d',d3.line().x(d=>x(d.th)).y(d=>y(d.emp)).curve(d3.curveBasis)).attr('fill','none').attr('stroke',colors[i]).attr('stroke-width',1.6).attr('opacity',0.82)\r
+    })\r
+    groups.forEach((g2,i)=>{ g.append('rect').attr('x',width-42).attr('y',8+i*12).attr('width',8).attr('height',8).attr('fill',colors[i]).attr('rx',2); g.append('text').attr('x',width-32).attr('y',15+i*12).attr('fill','var(--text-secondary)').attr('font-size','7px').text(g2) })\r
+    svg.append('text').attr('x',200).attr('y',14).attr('text-anchor','middle').attr('fill','var(--text)').attr('font-size','11px').attr('font-weight',600).text('P-P Overlay')\r
+  },[customData])\r
+  return <svg ref={ref} width={W} height={H} viewBox={\`0 0 \${W} \${H}\`} />\r
+}\r
+`;export{e as default};

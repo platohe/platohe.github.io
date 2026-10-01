@@ -1,0 +1,1 @@
+import{t as e}from"./variance-BqPUN31S.js";function t(t,n){let r=e(t,n);return r&&Math.sqrt(r)}export{t};

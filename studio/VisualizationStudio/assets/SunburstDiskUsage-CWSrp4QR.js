@@ -1,0 +1,43 @@
+var e=`import { useEffect, useRef } from 'react'\r
+import * as d3 from 'd3'\r
+import { W, H, colors } from './utils'\r
+// SunburstDiskUsage: Disk usage story.\r
+export const meta = {\r
+  id: 'sunburst-disk-usage',\r
+  title: 'Sunburst Disk Usage',\r
+  desc: 'Sunburst Disk Usage — a hierarchies chart visualization',\r
+  category: 'Hierarchies',\r
+  component: 'SunburstDiskUsage',\r
+  complexity: 'beginner',\r
+  interactivity: ["none"],\r
+  d3Api: ["d3-scale"],\r
+  tags: ["hierarchies","sunburst-disk-usage"],\r
+}\r
+\r
+export default function SunburstDiskUsage({ data: customData }) {\r
+  const ref = useRef(null)\r
+  useEffect(() => {\r
+    const svg = d3.select(ref.current); svg.selectAll('*').remove()\r
+    const DEFAULT_DATA = { name: '/', children: [\r
+      { name: 'usr', children: [{ name: 'lib', value: 34 }, { name: 'bin', value: 12 }] },\r
+      { name: 'var', children: [{ name: 'log', value: 15 }, { name: 'cache', value: 21 }] },\r
+      { name: 'home', children: [{ name: 'docs', value: 11 }, { name: 'media', value: 28 }] }] }\r
+    const data = (customData && customData.children) ? customData : DEFAULT_DATA\r
+    const g = svg.append('g').attr('transform', 'translate(200,150)')\r
+    const root = d3.hierarchy(data).sum((d) => d.value || 0)\r
+    d3.partition()(root)\r
+    const innerR = 40\r
+    const outerR = 96\r
+    const arcGen = d3.arc().startAngle((d) => d.x0).endAngle((d) => d.x1)\r
+      .innerRadius((d) => innerR + d.depth * ((outerR - innerR) / root.height))\r
+      .outerRadius((d) => innerR + (d.depth + 1) * ((outerR - innerR) / root.height) - 1.5)\r
+    const colorFor = (d) => { let top = d; while (top.depth > 1 && root.children.indexOf(top) < 0) top = top.parent; const base = Math.max(root.children.indexOf(top), 0); return colors[base % colors.length] }\r
+    g.selectAll('path').data(root.descendants()).join('path')\r
+      .attr('d', arcGen).attr('fill', colorFor)\r
+      .attr('fill-opacity', 0.88)\r
+      .attr('stroke', 'var(--bg)').attr('stroke-width', 1.2)\r
+    g.append('text').attr('text-anchor', 'middle').attr('font-size', '11px').attr('font-weight', 700).attr('fill', 'var(--text-secondary)').text('/ disk')\r
+  }, [customData])\r
+  return <svg ref={ref} width={W} height={H} viewBox="0 0 400 300" />\r
+}\r
+`;export{e as default};

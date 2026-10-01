@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23107c41'/><path d='M8 8h5l3 6 3-6h5l-5.5 8 5.5 8h-5l-3-6-3 6H8l5.5-8L8 8z' fill='white'/></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#107c41" />
+    <title>spreadsheet |STUDIO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aptos:ital,wght@0,400;0,600;0,700;1,400&family=Segoe+UI:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body, html, #root {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        font-family: 'Aptos', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        background-color: #ffffff;
+        color: #242424;
+      }
+      :root {
+        /* light theme (default) */
+        --bg-primary: #ffffff;
+        --bg-secondary: #f3f2f1;
+        --bg-tertiary: #f8f8f8;
+        --bg-quaternary: #fafafa;
+        --text-primary: #242424;
+        --text-secondary: #616161;
+        --text-muted: #999999;
+        --border-primary: #e1dfdd;
+        --border-secondary: #d1d1d1;
+        --border-subtle: #edebe9;
+        --accent-primary: #107c41;
+        --accent-light: #dff6dd;
+        /* Fluent's dark surfaces for popovers / overlays that sit outside the
+           app shell and are not re-themed by the .dark class. */
+        --popup-bg: #ffffff;
+        --menu-hover: #f3f2f1;
+      }
+      html.dark {
+        --bg-primary: #1e1e1e;
+        --bg-secondary: #2d2d2d;
+        --bg-tertiary: #383838;
+        --bg-quaternary: #2b2b2b;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-muted: #999999;
+        --border-primary: #404040;
+        --border-secondary: #505050;
+        --border-subtle: #383838;
+        --accent-light: #1a3a20;
+        --popup-bg: #252526;
+        --menu-hover: #37373d;
+      }
+      @media print {
+        .no-print { display: none !important; }
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-CaYrJhqF.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/vendor-fluent-Dsfs_HCI.js">
+    <link rel="modulepreload" crossorigin href="./assets/vendor-xlsx-B8aIVL0w.js">
+    <link rel="modulepreload" crossorigin href="./assets/vendor-i18n-CxP7tkQA.js">
+  <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
