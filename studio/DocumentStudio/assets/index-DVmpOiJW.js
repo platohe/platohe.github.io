@@ -1,0 +1,4 @@
+function u(s,r){return r.map(t=>{let n=s;for(const[e,l]of Object.entries(t))n=n.replace(new RegExp(`\\{\\{${e}\\}\\}`,"g"),l);return n})}function f(s,r,t=!1){const n=u(s,r);return t?n.join('<hr data-page-break style="page-break-after: always;" />'):n.join("")}function p(s){const r=s.replace(/\r\n/g,`
+`).replace(/\r/g,`
+`).split(`
+`).filter(e=>e.trim().length>0);if(r.length<2)return[];const t=c(r[0]).map(e=>e.trim()),n=[];for(let e=1;e<r.length;e++){const l=c(r[e]),a={};t.forEach((o,i)=>{a[o]=l[i]??""}),n.push(a)}return n}function c(s){const r=[];let t="",n=!1;for(let e=0;e<s.length;e++){const l=s[e];n?l==='"'?s[e+1]==='"'?(t+='"',e++):n=!1:t+=l:l==='"'?n=!0:l===","?(r.push(t),t=""):t+=l}return r.push(t),r}function g(s){const r=s.match(/\{\{([a-zA-Z0-9_]+)\}\}/g)||[];return Array.from(new Set(r.map(t=>t.replace(/^\{\{/,"").replace(/\}\}$/,"").trim())))}export{g as detectMergeFields,f as generateMailMergeOutput,p as parseCsvToRecords,u as replaceMergeFields};

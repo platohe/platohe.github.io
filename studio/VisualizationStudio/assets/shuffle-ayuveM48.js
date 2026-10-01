@@ -1,1 +1,0 @@
-var e=t(Math.random);function t(e){return function(t,n=0,r=t.length){let i=r-(n=+n);for(;i;){let r=e()*i--|0,a=t[i+n];t[i+n]=t[r+n],t[r+n]=a}return t}}export{e as t};
