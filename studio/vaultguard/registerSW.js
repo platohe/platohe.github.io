@@ -1,1 +1,1 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/vaultguard/sw.js', { scope: '/vaultguard/' })})}
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/studio/vaultguard/sw.js', { scope: '/studio/vaultguard/' })})}
