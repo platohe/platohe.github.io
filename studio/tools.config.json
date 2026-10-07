@@ -5,8 +5,9 @@
     "category": "Office",
     "icons": "📝",
     "show": true,
-    "dir": "DocumentStudio",
-    "path": "DocumentStudio"
+    "dir": "documentstudio",
+    "path": "documentstudio",
+    "thumbnail": "/thumbnails/document-studio.png"
   },
   {
     "name": "spreadsheet |STUDIO",
@@ -14,8 +15,9 @@
     "category": "Office",
     "icons": "📈",
     "show": true,
-    "dir": "SpreadsheetStudio",
-    "path": "SpreadsheetStudio"
+    "dir": "spreadsheetstudio",
+    "path": "spreadsheetstudio",
+    "thumbnail": "/thumbnails/spreadsheet-studio.png"
   },
   {
     "name": "presentation |STUDIO",
@@ -23,8 +25,9 @@
     "category": "Office",
     "icons": "📽️",
     "show": true,
-    "dir": "PresentationStudio",
-    "path": "PresentationStudio"
+    "dir": "presentationstudio",
+    "path": "presentationstudio",
+    "thumbnail": "/thumbnails/presentation-studio.png"
   },
   {
     "name": "note |STUDIO",
@@ -32,8 +35,9 @@
     "category": "Office",
     "icons": "📓",
     "show": true,
-    "dir": "NoteStudio",
-    "path": "NoteStudio"
+    "dir": "notestudio",
+    "path": "notestudio",
+    "thumbnail": "/thumbnails/note-studio.png"
   },
   {
     "name": "pdf |STUDIO",
@@ -41,26 +45,29 @@
     "category": "Productivity",
     "icons": "📕",
     "show": true,
-    "dir": "PDFStudio",
-    "path": "PDFStudio"
+    "dir": "pdfstudio",
+    "path": "pdfstudio",
+    "thumbnail": "/thumbnails/pdf-studio.png"
   },
   {
-    "name": "sprint |STUDIO",
+    "name": "task |STUDIO",
     "description": "Jira-inspired sprint planning and management tool with task tracking, burndown charts, and team collaboration.",
     "category": "Productivity",
     "icons": "🏃",
     "show": true,
     "dir": "sprintstudio",
-    "path": "sprintstudio"
+    "path": "sprintstudio",
+    "thumbnail": "/thumbnails/sprint-studio.png"
   },
   {
     "name": "web |STUDIO",
     "description": "Confluence-inspired web browser-based development environment with integrated tools for building and testing web applications.",
     "category": "Productivity",
     "icons": "🌐",
-    "show": true,
-    "dir": "WebStudio",
-    "path": "WebStudio"
+    "show": false,
+    "dir": "webstudio",
+    "path": "webstudio",
+    "thumbnail": "/thumbnails/web-studio.png"
   },
   {
     "name": "text |STUDIO",
@@ -68,17 +75,19 @@
     "category": "Productivity",
     "icons": "💻",
     "show": true,
-    "dir": "TextStudio",
-    "path": "TextStudio"
+    "dir": "textstudio",
+    "path": "textstudio",
+    "thumbnail": "/thumbnails/text-studio.png"
   },
   {
     "name": "markdown |STUDIO",
     "description": "Distraction-free Markdown editor with live synchronous preview, KaTeX math, and export options.",
     "category": "Writing",
     "icons": "📑",
-    "show": true,
+    "show": false,
     "dir": "mdstudio",
-    "path": "mdstudio"
+    "path": "mdstudio",
+    "thumbnail": "/thumbnails/markdown-studio.png"
   },
   {
     "name": "audio |STUDIO",
@@ -86,8 +95,9 @@
     "category": "Media",
     "icons": "🎵",
     "show": false,
-    "dir": "AudioStudio",
-    "path": "AudioStudio"
+    "dir": "audiostudio",
+    "path": "audiostudio",
+    "thumbnail": "/thumbnails/audio-studio.svg"
   },
   {
     "name": "photo |STUDIO",
@@ -95,8 +105,9 @@
     "category": "Media",
     "icons": "🖼️",
     "show": true,
-    "dir": "ImageStudio",
-    "path": "ImageStudio"
+    "dir": "imagestudio",
+    "path": "imagestudio",
+    "thumbnail": "/thumbnails/image-studio.png"
   },
   {
     "name": "video |STUDIO",
@@ -104,8 +115,9 @@
     "category": "Media",
     "icons": "🎬",
     "show": true,
-    "dir": "VideoStudio",
-    "path": "VideoStudio"
+    "dir": "videostudio",
+    "path": "videostudio",
+    "thumbnail": "/thumbnails/video-studio.png"
   },
   {
     "name": "canvas |STUDIO",
@@ -113,8 +125,9 @@
     "category": "Design",
     "icons": "🎨",
     "show": false,
-    "dir": "CanvasStudio",
-    "path": "CanvasStudio"
+    "dir": "canvasstudio",
+    "path": "canvasstudio",
+    "thumbnail": "/thumbnails/canvas-studio.svg"
   },
   {
     "name": "data |STUDIO",
@@ -123,7 +136,8 @@
     "icons": "📊",
     "show": true,
     "dir": "datamorph",
-    "path": "DataStudio"
+    "path": "datamorph",
+    "thumbnail": "/thumbnails/data-studio.png"
   },
   {
     "name": "formula |STUDIO",
@@ -131,8 +145,9 @@
     "category": "Engineering",
     "icons": "∑",
     "show": false,
-    "dir": "FormulaStudio",
-    "path": "FormulaStudio"
+    "dir": "formulastudio",
+    "path": "formulastudio",
+    "thumbnail": "/thumbnails/formula-studio.svg"
   },
   {
     "name": "SnapNote",
@@ -141,16 +156,18 @@
     "icons": "⚡",
     "show": false,
     "dir": "snapnote",
-    "path": "snapnote"
+    "path": "snapnote",
+    "thumbnail": "/thumbnails/snapnote.svg"
   },
   {
     "name": "sync |STUDIO",
     "description": "Local-first peer-to-peer file synchronization via WebRTC with version history and backup management.",
     "category": "Utilities",
     "icons": "🔄",
-    "show": true,
-    "dir": "SyncStudio",
-    "path": "SyncStudio"
+    "show": false,
+    "dir": "syncstudio",
+    "path": "syncstudio",
+    "thumbnail": "/thumbnails/sync-studio.png"
   },
   {
     "name": "task |STUDIO",
@@ -159,7 +176,8 @@
     "icons": "✅",
     "show": false,
     "dir": "taskflow",
-    "path": "taskflow"
+    "path": "taskflow",
+    "thumbnail": "/thumbnails/task-studio.svg"
   },
   {
     "name": "vault |STUDIO",
@@ -168,7 +186,8 @@
     "icons": "🔐",
     "show": true,
     "dir": "vaultguard",
-    "path": "vaultguard"
+    "path": "vaultguard",
+    "thumbnail": "/thumbnails/vault-studio.png"
   },
   {
     "name": "visualization |STUDIO",
@@ -176,16 +195,18 @@
     "category": "Data",
     "icons": "📊",
     "show": true,
-    "dir": "VisualizationStudio",
-    "path": "VisualizationStudio"
+    "dir": "visualizationstudio",
+    "path": "visualizationstudio",
+    "thumbnail": "/thumbnails/visualization-studio.png"
   },
   {
     "name": "ascii |STUDIO",
     "description": "ASCII art generator with text-to-ASCII conversion, figlet fonts, and color rendering.",
     "category": "Design",
     "icons": " #",
-    "show": true,
-    "dir": "AsciiStudio",
-    "path": "AsciiStudio"
+    "show": false,
+    "dir": "asciistudio",
+    "path": "asciistudio",
+    "thumbnail": "/thumbnails/ascii-studio.png"
   }
 ]

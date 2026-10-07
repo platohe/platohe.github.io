@@ -1,1 +1,0 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/studio/mdstudio/sw.js', { scope: '/studio/mdstudio/' })})}

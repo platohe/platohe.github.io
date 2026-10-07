@@ -1,1 +1,0 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/data-studio/sw.js', { scope: '/data-studio/' })})}

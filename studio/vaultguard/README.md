@@ -198,6 +198,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Acknowledgments
 
-- Built according to the Nexus Suite specification (Section 5.3)
+- Built according to the STUDIO Suite specification (Section 5.3)
 - Inspired by industry-leading password managers
 - Security best practices from OWASP and NIST guidelines

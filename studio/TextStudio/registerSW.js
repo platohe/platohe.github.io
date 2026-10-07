@@ -1,1 +1,1 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/studio/TextStudio/sw.js', { scope: '/studio/TextStudio/' })})}
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/textstudio/sw.js', { scope: '/textstudio/' })})}

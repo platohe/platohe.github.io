@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39; &#39;wasm-unsafe-eval&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39;; img-src &#39;self&#39; data: blob:; font-src &#39;self&#39; data:; connect-src &#39;self&#39; https://api.pwnedpasswords.com; object-src &#39;none&#39;; base-uri &#39;none&#39;; form-action &#39;none&#39;">
+
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
@@ -10,34 +12,18 @@
     <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
     <meta name="theme-color" content="#1e3a5f" />
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon" href="pwa-192x192.png">
     <link rel="mask-icon" href="favicon.svg" color="#3b82f6">
     <link rel="manifest" href="manifest.webmanifest">
-    <title>VaultGuard - Password Manager</title>
-    <script>
-      // Enhanced security: Ensure we're in a secure context
-      if (window.isSecureContext === false) {
-        console.warn('VaultGuard should only be run in a secure context (HTTPS).');
-      }
-      
-      // Prevent sensitive data from being captured in some session recording tools
-      // that respect these standard attributes
-      window.addEventListener('DOMContentLoaded', () => {
-        document.body.setAttribute('data-private', 'true');
-        document.body.setAttribute('data-recording-ignore', 'true');
-      });
-    </script>
-    <script type="module" crossorigin src="/studio/vaultguard/assets/index-BjwhKpeB.js"></script>
-    <link rel="modulepreload" crossorigin href="/studio/vaultguard/assets/vendor-crypto-ZZe3WlLI.js">
-    <link rel="modulepreload" crossorigin href="/studio/vaultguard/assets/vendor-react-xESKVwWO.js">
-    <link rel="stylesheet" crossorigin href="/studio/vaultguard/assets/index-C-tCXFwD.css">
-  <link rel="manifest" href="/studio/vaultguard/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/studio/vaultguard/registerSW.js"></script></head>
+    <title>VaultGuard - Password Manager</title>
+    <script type="module" crossorigin src="./assets/index-vIaY4Ih1.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/vendor-react-CcqGKHCs.js">
+    <link rel="modulepreload" crossorigin href="./assets/vendor-crypto-CWVNdB4s.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-CkL6Dp-T.css">
+  <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
   <body>
     <div id="root"></div>
   </body>
