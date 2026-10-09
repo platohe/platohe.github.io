@@ -6,7 +6,7 @@
     "icons": "📝",
     "show": true,
     "dir": "documentstudio",
-    "path": "documentstudio",
+    "path": "document",
     "thumbnail": "/thumbnails/document-studio.png"
   },
   {
@@ -16,7 +16,7 @@
     "icons": "📈",
     "show": true,
     "dir": "spreadsheetstudio",
-    "path": "spreadsheetstudio",
+    "path": "spreadsheet",
     "thumbnail": "/thumbnails/spreadsheet-studio.png"
   },
   {
@@ -26,7 +26,7 @@
     "icons": "📽️",
     "show": true,
     "dir": "presentationstudio",
-    "path": "presentationstudio",
+    "path": "presentation",
     "thumbnail": "/thumbnails/presentation-studio.png"
   },
   {
@@ -36,7 +36,7 @@
     "icons": "📓",
     "show": true,
     "dir": "notestudio",
-    "path": "notestudio",
+    "path": "note",
     "thumbnail": "/thumbnails/note-studio.png"
   },
   {
@@ -46,7 +46,7 @@
     "icons": "📕",
     "show": true,
     "dir": "pdfstudio",
-    "path": "pdfstudio",
+    "path": "pdf",
     "thumbnail": "/thumbnails/pdf-studio.png"
   },
   {
@@ -56,7 +56,7 @@
     "icons": "🏃",
     "show": true,
     "dir": "sprintstudio",
-    "path": "sprintstudio",
+    "path": "sprint",
     "thumbnail": "/thumbnails/sprint-studio.png"
   },
   {
@@ -66,7 +66,7 @@
     "icons": "🌐",
     "show": false,
     "dir": "webstudio",
-    "path": "webstudio",
+    "path": "web",
     "thumbnail": "/thumbnails/web-studio.png"
   },
   {
@@ -76,7 +76,7 @@
     "icons": "💻",
     "show": true,
     "dir": "textstudio",
-    "path": "textstudio",
+    "path": "text",
     "thumbnail": "/thumbnails/text-studio.png"
   },
   {
@@ -86,7 +86,7 @@
     "icons": "📑",
     "show": false,
     "dir": "mdstudio",
-    "path": "mdstudio",
+    "path": "md",
     "thumbnail": "/thumbnails/markdown-studio.png"
   },
   {
@@ -96,7 +96,7 @@
     "icons": "🎵",
     "show": false,
     "dir": "audiostudio",
-    "path": "audiostudio",
+    "path": "audio",
     "thumbnail": "/thumbnails/audio-studio.svg"
   },
   {
@@ -106,7 +106,7 @@
     "icons": "🖼️",
     "show": true,
     "dir": "imagestudio",
-    "path": "imagestudio",
+    "path": "image",
     "thumbnail": "/thumbnails/image-studio.png"
   },
   {
@@ -116,7 +116,7 @@
     "icons": "🎬",
     "show": true,
     "dir": "videostudio",
-    "path": "videostudio",
+    "path": "video",
     "thumbnail": "/thumbnails/video-studio.png"
   },
   {
@@ -126,7 +126,7 @@
     "icons": "🎨",
     "show": false,
     "dir": "canvasstudio",
-    "path": "canvasstudio",
+    "path": "canvas",
     "thumbnail": "/thumbnails/canvas-studio.svg"
   },
   {
@@ -146,7 +146,7 @@
     "icons": "∑",
     "show": false,
     "dir": "formulastudio",
-    "path": "formulastudio",
+    "path": "formula",
     "thumbnail": "/thumbnails/formula-studio.svg"
   },
   {
@@ -166,7 +166,7 @@
     "icons": "🔄",
     "show": false,
     "dir": "syncstudio",
-    "path": "syncstudio",
+    "path": "sync",
     "thumbnail": "/thumbnails/sync-studio.png"
   },
   {
@@ -196,7 +196,7 @@
     "icons": "📊",
     "show": true,
     "dir": "visualizationstudio",
-    "path": "visualizationstudio",
+    "path": "visualization",
     "thumbnail": "/thumbnails/visualization-studio.png"
   },
   {
@@ -206,7 +206,7 @@
     "icons": " #",
     "show": false,
     "dir": "asciistudio",
-    "path": "asciistudio",
+    "path": "ascii",
     "thumbnail": "/thumbnails/ascii-studio.png"
   }
 ]
