@@ -1,1 +1,0 @@
-import{p as e}from"./src-DfVJmg0Q.js";var t=t=>e(t[t.length-1]);export{t};

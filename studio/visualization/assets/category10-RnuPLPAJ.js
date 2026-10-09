@@ -1,1 +1,0 @@
-import{t as e}from"./colors-Cg5Vh3br.js";var t=e(`1f77b4ff7f0e2ca02cd627289467bd8c564be377c27f7f7fbcbd2217becf`);export{t};
