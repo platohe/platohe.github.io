@@ -1,0 +1,60 @@
+var e=`import { useEffect, useRef } from 'react'\r
+import * as d3 from 'd3'\r
+import { W, H } from './utils'\r
+\r
+export const meta = {\r
+  id: 'streamgraph',\r
+  title: 'Streamgraph',\r
+  desc: 'Streamgraph — a areas chart visualization',\r
+  category: 'Areas',\r
+  component: 'Streamgraph',\r
+  complexity: 'beginner',\r
+  interactivity: ["none"],\r
+  d3Api: ["d3-scale"],\r
+  tags: ["areas","streamgraph"],\r
+}\r
+\r
+export default function Streamgraph({ data: customData }) {\r
+  const ref = useRef(null)\r
+\r
+  useEffect(() => {\r
+    const svg = d3.select(ref.current)\r
+    svg.selectAll('*').remove()\r
+\r
+    const DEFAULT_DATA = [{"t":0,"a":13.006,"b":15.793,"c":8.557,"d":10.339},{"t":1,"a":13.238,"b":15.987,"c":8.057,"d":10.007},{"t":2,"a":18.845,"b":15.416,"c":9.147,"d":9.823},{"t":3,"a":19.995,"b":14.18,"c":10,"d":7.992},{"t":4,"a":20.889,"b":14.623,"c":10.219,"d":6.621},{"t":5,"a":22.167,"b":11.447,"c":12.522,"d":4.35},{"t":6,"a":19.126,"b":10.421,"c":11.545,"d":4.548},{"t":7,"a":19.557,"b":9.128,"c":11.439,"d":3.604},{"t":8,"a":17.842,"b":11.061,"c":11.505,"d":2.131},{"t":9,"a":13.606,"b":6.842,"c":11.56,"d":2.194},{"t":10,"a":12.355,"b":8.086,"c":9.621,"d":1.861},{"t":11,"a":12.431,"b":7.904,"c":9.432,"d":2.371},{"t":12,"a":7.881,"b":4.748,"c":6.93,"d":4.359},{"t":13,"a":7.902,"b":5.631,"c":8.243,"d":4.529},{"t":14,"a":7.746,"b":4.071,"c":7.073,"d":6.021},{"t":15,"a":2.734,"b":2.123,"c":4.224,"d":8.012},{"t":16,"a":5.09,"b":5.608,"c":2.449,"d":9.541},{"t":17,"a":7.268,"b":3.312,"c":3.645,"d":9.139},{"t":18,"a":6.419,"b":5.907,"c":1.474,"d":10.991},{"t":19,"a":8.409,"b":6.919,"c":2.306,"d":9.891},{"t":20,"a":9.449,"b":6.463,"c":2.174,"d":9.474},{"t":21,"a":11.611,"b":6.857,"c":4.235,"d":8.322},{"t":22,"a":17.462,"b":9.717,"c":3.768,"d":6.704},{"t":23,"a":16.107,"b":7.731,"c":5.549,"d":4.848},{"t":24,"a":20.279,"b":12.144,"c":4.884,"d":3.874},{"t":25,"a":21.614,"b":10.222,"c":8.752,"d":2.233},{"t":26,"a":21.535,"b":13.61,"c":7.745,"d":2.035},{"t":27,"a":18.576,"b":14.427,"c":9.258,"d":1.415},{"t":28,"a":19.981,"b":16.201,"c":10.264,"d":2.863},{"t":29,"a":17.268,"b":13.839,"c":12.707,"d":2.746},{"t":30,"a":13.345,"b":16.711,"c":12.596,"d":4.85},{"t":31,"a":15.536,"b":14.815,"c":12.785,"d":5.398},{"t":32,"a":9.526,"b":14.149,"c":13.063,"d":7.229},{"t":33,"a":7.797,"b":14.803,"c":11.623,"d":7.164},{"t":34,"a":5.505,"b":17.19,"c":11.709,"d":10.121},{"t":35,"a":3.782,"b":13.207,"c":10.807,"d":9.386},{"t":36,"a":4.126,"b":13.388,"c":9.316,"d":10.37},{"t":37,"a":4.036,"b":11.976,"c":9.556,"d":9.364},{"t":38,"a":5.122,"b":11.951,"c":7.263,"d":9.15},{"t":39,"a":5.081,"b":9.625,"c":5.299,"d":7.514},{"t":40,"a":9.054,"b":8.011,"c":3.788,"d":6.937},{"t":41,"a":9.465,"b":6.465,"c":3.268,"d":4.24},{"t":42,"a":13.157,"b":5.715,"c":3.046,"d":3.626},{"t":43,"a":16.18,"b":7.578,"c":3.585,"d":2.714},{"t":44,"a":15.507,"b":6.604,"c":2.577,"d":2.869},{"t":45,"a":20.903,"b":4.334,"c":1.601,"d":2.241},{"t":46,"a":21.588,"b":2.985,"c":2.792,"d":2.395},{"t":47,"a":22.917,"b":3.97,"c":4.935,"d":3.738},{"t":48,"a":21.443,"b":2.306,"c":3.525,"d":3.496},{"t":49,"a":19.299,"b":5.124,"c":6.727,"d":6.469}]\r
+    const data = (customData && ((Array.isArray(customData) && customData.length > 0) || (!Array.isArray(customData) && typeof customData === 'object' && Object.keys(customData).length > 0))) ? customData : DEFAULT_DATA\r
+\r
+    // Derive keys from data: all numeric properties except the time axis key\r
+    const timeKey = data[0] && data[0].t !== undefined ? 't' : null\r
+    const keys = timeKey\r
+      ? Object.keys(data[0]).filter(k => k !== timeKey && typeof data[0][k] === 'number')\r
+      : Object.keys(data[0]).filter(k => typeof data[0][k] === 'number')\r
+    const stacked = d3.stack().keys(keys)(data)\r
+    const maxVal = d3.max(data, d => d3.sum(keys, k => d[k]))\r
+\r
+    // Derive x domain from data extent\r
+    const x = d3.scaleLinear()\r
+      .domain(timeKey ? d3.extent(data, d => d[timeKey]) : d3.extent(data, (_, i) => i))\r
+      .range([20, 380])\r
+    const y = d3.scaleLinear().domain([0, maxVal * 1.1]).range([265, 35])\r
+\r
+    const color = d3.scaleOrdinal().domain(keys).range(['#6366f1', '#f59e0b', '#10b981', '#ef4444', '#8b5cf6', '#ec4899'])\r
+\r
+    const area = d3.area()\r
+      .x((d) => x(timeKey ? d.data[timeKey] : d.index))\r
+      .y0((d) => y(d[0]))\r
+      .y1((d) => y(d[1]))\r
+      .curve(d3.curveBasis)\r
+\r
+    svg.selectAll('.layer')\r
+      .data(stacked)\r
+      .join('path')\r
+      .attr('class', 'layer')\r
+      .attr('d', area)\r
+      .attr('fill', (d) => color(d.key))\r
+      .attr('opacity', 0.85)\r
+  }, [customData])\r
+\r
+  return <svg ref={ref} width={W} height={H} viewBox="0 0 400 300" />\r
+}\r
+`;export{e as default};
