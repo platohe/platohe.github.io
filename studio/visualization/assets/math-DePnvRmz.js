@@ -1,1 +1,0 @@
-var e=Math.PI/180,t=180/Math.PI;export{e as n,t};
