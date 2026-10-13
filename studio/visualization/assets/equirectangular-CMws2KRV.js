@@ -1,1 +1,0 @@
-import{t as e}from"./projection-CaMCTyGA.js";function t(e,t){return[e,t]}t.invert=t;function n(){return e(t).scale(152.63)}export{n as t};

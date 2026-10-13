@@ -42,7 +42,7 @@
   {
     "name": "pdf |STUDIO",
     "description": "Adobe Acrobat-inspired PDF editor, page management, PDF annotations, digital signatures, and forms.",
-    "category": "Productivity",
+    "category": "Office",
     "icons": "📕",
     "show": true,
     "dir": "pdfstudio",
@@ -52,7 +52,7 @@
   {
     "name": "task |STUDIO",
     "description": "Jira-inspired sprint planning and management tool with task tracking, burndown charts, and team collaboration.",
-    "category": "Productivity",
+    "category": "Office",
     "icons": "🏃",
     "show": true,
     "dir": "sprintstudio",
@@ -62,7 +62,7 @@
   {
     "name": "web |STUDIO",
     "description": "Confluence-inspired web browser-based development environment with integrated tools for building and testing web applications.",
-    "category": "Productivity",
+    "category": "Office",
     "icons": "🌐",
     "show": false,
     "dir": "webstudio",
@@ -72,7 +72,7 @@
   {
     "name": "text |STUDIO",
     "description": "VS Code-inspired text editor with mini-map, and command palette.",
-    "category": "Productivity",
+    "category": "Office",
     "icons": "💻",
     "show": true,
     "dir": "textstudio",
@@ -82,7 +82,7 @@
   {
     "name": "markdown |STUDIO",
     "description": "Distraction-free Markdown editor with live synchronous preview, KaTeX math, and export options.",
-    "category": "Writing",
+    "category": "Office",
     "icons": "📑",
     "show": false,
     "dir": "mdstudio",
@@ -94,10 +94,10 @@
     "description": "Professional audio editor with waveform visualization, multi-track mixing, and sound analysis.",
     "category": "Media",
     "icons": "🎵",
-    "show": false,
+    "show": true,
     "dir": "audiostudio",
     "path": "audio",
-    "thumbnail": "/thumbnails/audio-studio.svg"
+    "thumbnail": "/thumbnails/audio-studio.png"
   },
   {
     "name": "photo |STUDIO",
@@ -122,12 +122,12 @@
   {
     "name": "canvas |STUDIO",
     "description": "Infinite canvas graphic design, vector illustration, mind maps, and collaborative whiteboard.",
-    "category": "Design",
+    "category": "Office",
     "icons": "🎨",
-    "show": false,
+    "show": true,
     "dir": "canvasstudio",
     "path": "canvas",
-    "thumbnail": "/thumbnails/canvas-studio.svg"
+    "thumbnail": "/thumbnails/canvas-studio.png"
   },
   {
     "name": "data |STUDIO",
@@ -142,7 +142,7 @@
   {
     "name": "formula |STUDIO",
     "description": "Advanced LaTeX mathematical formula editor, equation rendering, and scientific symbol palettes.",
-    "category": "Engineering",
+    "category": "Office",
     "icons": "∑",
     "show": false,
     "dir": "formulastudio",
@@ -152,7 +152,7 @@
   {
     "name": "SnapNote",
     "description": "Fast capture scratchpad with OCR text recognition, snippets, tags, and rapid search.",
-    "category": "Productivity",
+    "category": "Office",
     "icons": "⚡",
     "show": false,
     "dir": "snapnote",
@@ -172,7 +172,7 @@
   {
     "name": "task |STUDIO",
     "description": "Productivity task planner with Kanban boards, calendar views, milestones, and priority filters.",
-    "category": "Productivity",
+    "category": "Office",
     "icons": "✅",
     "show": false,
     "dir": "taskflow",
@@ -188,25 +188,5 @@
     "dir": "vaultguard",
     "path": "vaultguard",
     "thumbnail": "/thumbnails/vault-studio.png"
-  },
-  {
-    "name": "visualization |STUDIO",
-    "description": "Data visualization studio with 40+ interactive chart types, dataset imports, and embeddable widgets.",
-    "category": "Data",
-    "icons": "📊",
-    "show": true,
-    "dir": "visualizationstudio",
-    "path": "visualization",
-    "thumbnail": "/thumbnails/visualization-studio.png"
-  },
-  {
-    "name": "ascii |STUDIO",
-    "description": "ASCII art generator with text-to-ASCII conversion, figlet fonts, and color rendering.",
-    "category": "Design",
-    "icons": " #",
-    "show": false,
-    "dir": "asciistudio",
-    "path": "ascii",
-    "thumbnail": "/thumbnails/ascii-studio.png"
   }
 ]
