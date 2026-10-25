@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Meta CSP (plan §B.5): frame-ancestors is deliberately NOT claimed —
+         it is ignored in meta CSP and the framing gap is disclosed in-product. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'none'" />
+    <link rel="icon" type="image/svg+xml" href="/studio/vault/icon.svg" />
+    <title>vault |STUDIO</title>
+    <script>
+      // spa-github-pages deep-link restore shim (companion to public/404.html).
+      (function () {
+        var l = window.location;
+        if (l.search && l.search.indexOf("?/") === 0) {
+          var path = l.search.slice(2).split("&")[0];
+          window.history.replaceState(null, "", l.pathname + path + l.hash);
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/studio/vault/assets/index-DEcODMc4.js"></script>
+    <link rel="stylesheet" crossorigin href="/studio/vault/assets/index-Bj0aEfyB.css">
+  <link rel="manifest" href="/studio/vault/manifest.webmanifest"></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

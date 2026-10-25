@@ -1,5 +1,15 @@
 window.TOOLS_CONFIG = [
   {
+    "name": "calendar |STUDIO",
+    "description": "Microsoft Outlook web-inspired local calendar with day, week, month and agenda views, recurring events, quick-add, and ICS import/export.",
+    "category": "Office",
+    "icons": "📅",
+    "show": true,
+    "dir": "calendarstudio",
+    "path": "calendar",
+    "thumbnail": "/thumbnails/calendar-studio.png"
+  },
+  {
     "name": "document |STUDIO",
     "description": "Microsoft Word-inspired rich document editor with native DOCX support, formatting, and layout tools.",
     "category": "Office",
@@ -55,9 +65,9 @@ window.TOOLS_CONFIG = [
     "category": "Office",
     "icons": "🏃",
     "show": true,
-    "dir": "sprintstudio",
-    "path": "sprint",
-    "thumbnail": "/thumbnails/sprint-studio.png"
+    "dir": "taskstudio",
+    "path": "task",
+    "thumbnail": "/thumbnails/task-studio.png"
   },
   {
     "name": "web |STUDIO",
@@ -105,8 +115,8 @@ window.TOOLS_CONFIG = [
     "category": "Media",
     "icons": "🖼️",
     "show": true,
-    "dir": "imagestudio",
-    "path": "image",
+    "dir": "photostudio",
+    "path": "photo",
     "thumbnail": "/thumbnails/image-studio.png"
   },
   {
@@ -135,8 +145,8 @@ window.TOOLS_CONFIG = [
     "category": "Data",
     "icons": "📊",
     "show": true,
-    "dir": "datamorph",
-    "path": "datamorph",
+    "dir": "datastudio",
+    "path": "data",
     "thumbnail": "/thumbnails/data-studio.png"
   },
   {
@@ -185,8 +195,8 @@ window.TOOLS_CONFIG = [
     "category": "Security",
     "icons": "🔐",
     "show": true,
-    "dir": "vaultguard",
-    "path": "vaultguard",
+    "dir": "vaultstudio",
+    "path": "vault",
     "thumbnail": "/thumbnails/vault-studio.png"
   }
 ];
