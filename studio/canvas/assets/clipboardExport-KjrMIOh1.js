@@ -1,0 +1,2 @@
+async function r(t){const e=typeof navigator<"u"?navigator.clipboard:void 0,n=globalThis.ClipboardItem;if(e?.write&&n){const i={};t.svg&&(i["image/svg+xml"]=new Blob([t.svg],{type:"image/svg+xml"})),t.png&&(i["image/png"]=t.png),i["text/plain"]=new Blob([t.text],{type:"text/plain"});try{return await e.write([new n(i)]),"rich"}catch{}}if(e?.writeText)try{return await e.writeText(t.text),"text"}catch{return"failed"}return"failed"}function a(t,e){return[`# ${t}`,...e].join(`
+`)}export{a as pageAsText,r as writeToClipboard};
