@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Verify a DataStudio Run Card</title>
+<meta name="theme-color" content="#1E293B" />
+<style>
+  :root {
+    --bg-page: #f5f5f5;
+    --bg-surface: #ffffff;
+    --bg-subtle: #fafafa;
+    --border: #e0e0e0;
+    --border-strong: #c8c8c8;
+    --text-primary: #1b1b1b;
+    --text-secondary: #5c5c5c;
+    --text-tertiary: #767676;
+    --accent: #185abd;
+    --success: #0f7b3d;
+    --success-bg: #e8f6ee;
+    --error: #b10e1e;
+    --error-bg: #fdeaea;
+    --radius: 8px;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.06);
+    --font: 'Segoe UI Variable', 'Segoe UI', Inter, system-ui, -apple-system, sans-serif;
+    --mono: 'Cascadia Code', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-page: #1f1f1f;
+      --bg-surface: #292929;
+      --bg-subtle: #232323;
+      --border: #3d3d3d;
+      --border-strong: #565656;
+      --text-primary: #f2f2f2;
+      --text-secondary: #c4c4c4;
+      --text-tertiary: #a0a0a0;
+      --accent: #60a4ec;
+      --success: #6ccf9a;
+      --success-bg: #16301f;
+      --error: #ff9aa4;
+      --error-bg: #3a1a1d;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px 20px 56px;
+    background: var(--bg-page);
+    color: var(--text-primary);
+    font-family: var(--font);
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+  header { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  h1 { font-size: 20px; font-weight: 650; margin: 0; letter-spacing: -0.01em; }
+  .tag {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--text-tertiary); border: 1px solid var(--border-strong);
+    border-radius: 999px; padding: 2px 8px;
+  }
+  .lede { margin: 0; color: var(--text-secondary); max-width: 62ch; }
+  .card {
+    background: var(--bg-surface); border: 1px solid var(--border);
+    border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px;
+  }
+  #drop {
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    padding: 26px 18px; border: 1.5px dashed var(--border-strong);
+    border-radius: var(--radius); background: var(--bg-subtle);
+    text-align: center; transition: border-color 120ms ease, background 120ms ease;
+  }
+  #drop.over { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, var(--bg-subtle)); }
+  #drop p { margin: 0; color: var(--text-secondary); }
+  button {
+    font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+    border-radius: 6px; border: 1px solid var(--border-strong);
+    background: var(--bg-surface); color: var(--text-primary); padding: 6px 12px;
+  }
+  button:hover { border-color: var(--accent); color: var(--accent); }
+  button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  button.primary:hover { filter: brightness(1.06); color: #fff; }
+  .row-actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 12px; }
+  .status { font-size: 12px; color: var(--text-tertiary); margin-top: 10px; min-height: 18px; }
+  .status.pass { color: var(--success); font-weight: 600; }
+  .status.fail { color: var(--error); font-weight: 600; }
+  label { display: block; font-size: 12px; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px; }
+  textarea {
+    width: 100%; min-height: 92px; resize: vertical; font-family: var(--mono);
+    font-size: 12px; padding: 10px; border-radius: var(--radius);
+    border: 1px solid var(--border); background: var(--bg-subtle); color: var(--text-primary);
+  }
+  textarea:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .verdict {
+    font-size: 15px; font-weight: 700; padding: 10px 14px; border-radius: var(--radius);
+    margin-bottom: 12px;
+  }
+  .verdict.pass { background: var(--success-bg); color: var(--success); }
+  .verdict.fail { background: var(--error-bg); color: var(--error); }
+  .row { display: flex; gap: 12px; padding: 6px 0; border-bottom: 1px solid var(--border); align-items: baseline; }
+  .row:last-child { border-bottom: 0; }
+  .row > span { color: var(--text-tertiary); min-width: 88px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .row strong { font-weight: 600; }
+  .row.mono { flex-direction: column; gap: 4px; }
+  .row code { font-family: var(--mono); font-size: 11px; word-break: break-all; color: var(--text-secondary); }
+  #reasons { margin-top: 12px; max-height: 40vh; overflow: auto; }
+  #reasons ul { margin: 0; padding-left: 18px; }
+  #reasons li { margin: 4px 0; color: var(--error); }
+  .muted { color: var(--text-tertiary); margin: 0; font-size: 13px; }
+  footer { color: var(--text-tertiary); font-size: 12px; }
+  footer code { font-family: var(--mono); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Verify a DataStudio Run Card</h1>
+    <span class="tag">offline</span>
+  </header>
+  <p class="lede">
+    This page runs entirely in your browser, from this file, with no network access. It checks that a
+    card was not edited after it was written, and — if you also supply an evidence bundle — that the
+    inputs it describes are the ones you have.
+  </p>
+
+  <section class="card" id="drop-card">
+    <div id="drop">
+      <p><strong>Drop a <code>.dscard.json</code> here</strong></p>
+      <p>Add an evidence bundle too, if you have one, to check the input digests.</p>
+      <button id="pick" type="button">Choose files…</button>
+      <input id="file" type="file" accept=".json,application/json" multiple hidden />
+    </div>
+    <div class="row-actions">
+      <button id="clear" type="button">Clear</button>
+      <div class="status" id="status" aria-live="polite">Drop a card to verify it.</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <label for="pasted">…or paste a card</label>
+    <textarea id="pasted" spellcheck="false" placeholder='{ "format": "datastudio-run-card", … }'></textarea>
+    <div class="row-actions">
+      <button id="verify-pasted" class="primary" type="button">Verify pasted card</button>
+    </div>
+  </section>
+
+  <section class="card" id="result" hidden>
+    <div class="verdict" id="verdict"></div>
+    <div id="details"></div>
+    <div id="reasons"></div>
+  </section>
+
+  <footer>
+    Structural verification proves the card was not edited in transit. It does not prove the data or
+    the result: that needs the committed goldens the card names. A signature means
+    <em>signed by that install</em>, which is integrity, not identity.
+  </footer>
+</main>
+<script>
+"use strict";(()=>{var L=(e,n)=>Object.prototype.hasOwnProperty.call(e,n),u=class extends Error{constructor(n,t){super(`${t}: ${n}`),this.name="CanonicalJsonError",this.path=t}};function v(e){return h(e,"$",new Set)}function h(e,n,t){if(e===null)return"null";switch(typeof e){case"boolean":return e?"true":"false";case"string":return JSON.stringify(e);case"number":if(!Number.isFinite(e))throw new u(`non-finite number (${String(e)}) is not representable`,n);return JSON.stringify(e);case"undefined":throw new u("undefined is not representable",n);case"bigint":throw new u("bigint is not representable",n);case"function":throw new u("function is not representable",n);case"symbol":throw new u("symbol is not representable",n);default:break}if(Array.isArray(e)){if(t.has(e))throw new u("circular reference",n);t.add(e);let d=e.map((c,p)=>{if(c===void 0)throw new u("undefined array element is not representable",`${n}[${p}]`);return h(c,`${n}[${p}]`,t)});return t.delete(e),`[${d.join(",")}]`}let r=Object.getPrototypeOf(e);if(r!==Object.prototype&&r!==null){let d=r?.constructor?.name||"object";throw new u(`unsupported object type (${d})`,n)}if(t.has(e))throw new u("circular reference",n);t.add(e);let s=Object.keys(e).sort(),i=[];for(let d of s){if(!L(e,d))continue;let c=e[d];c!==void 0&&i.push(`${JSON.stringify(d)}:${h(c,`${n}.${d}`,t)}`)}return t.delete(e),`{${i.join(",")}}`}var m="datastudio-run-card",k="1.0",b="datastudio-card-evidence",T="1.0",j=Object.freeze(["cardId","signature","createdAt","timings","name"]),D="ECDSA-P256-SHA256",w="0123456789abcdef";function $(e){let n=new Uint8Array(e),t="";for(let r=0;r<n.length;r++)t+=w[n[r]>>4]+w[n[r]&15];return t}function g(){let e=globalThis.crypto?.subtle;if(!e?.digest)throw new Error("Web Crypto (crypto.subtle) is unavailable; this page cannot verify cards");return e}async function H(e){let n=new TextEncoder().encode(e);return $(await g().digest("SHA-256",n))}function S(e){let n={};for(let t of Object.keys(e))j.includes(t)||(n[t]=e[t]);return n}async function J(e){return`sha256:${await H(v(S(e)))}`}function E(e){if(!/^[A-Za-z0-9+/]*={0,2}$/.test(e)||e.length%4!==0)throw new Error("signature is not valid base64");let n=atob(e),t=new Uint8Array(n.length);for(let r=0;r<n.length;r++)t[r]=n.charCodeAt(r);return t}async function R(e){let n=e?.signature;if(!n)return{signed:!1,valid:!1,reason:null};if(n.algorithm!==D)return{signed:!0,valid:!1,reason:`unsupported signature algorithm ${String(n.algorithm)}`};let t=n.publicKey;if(!t||t.kty!=="EC"||t.crv!=="P-256")return{signed:!0,valid:!1,reason:"signature key is not an ECDSA P-256 public key"};let r;try{r=E(String(n.value??""))}catch(s){return{signed:!0,valid:!1,reason:s.message}}try{let s=await g().importKey("jwk",t,{name:"ECDSA",namedCurve:"P-256"},!1,["verify"]),i=new TextEncoder().encode(v(S(e)));return await g().verify({name:"ECDSA",hash:"SHA-256"},s,r,i)?{signed:!0,valid:!0,reason:null}:{signed:!0,valid:!1,reason:"signature does not match this card (edited after signing)"}}catch(s){return{signed:!0,valid:!1,reason:`signature could not be checked: ${s.message}`}}}var f=e=>!!e&&typeof e=="object"&&!Array.isArray(e);function M(e){if(!f(e))return["not a run card (expected a JSON object)"];let n=[];return e.format!==m&&n.push(`format is ${JSON.stringify(e.format)}, not ${m}`),e.version!==k&&n.push(`unsupported card version ${JSON.stringify(e.version)}`),(typeof e.cardId!="string"||!/^sha256:[0-9a-f]{64}$/.test(e.cardId))&&n.push("cardId is missing or malformed"),(!f(e.app)||typeof e.app.engine!="string")&&n.push("app.engine is missing"),!Array.isArray(e.inputs)||e.inputs.length===0?n.push("inputs are missing"):e.inputs.forEach((t,r)=>{(!f(t)||typeof t.digest!="string")&&n.push(`inputs[${r}].digest is missing`)}),!f(e.graph)||!Array.isArray(e.graph.nodes)||e.graph.nodes.length===0?n.push("chain is missing"):e.graph.nodes.forEach((t,r)=>{(!f(t)||typeof t.id!="string")&&n.push(`graph.nodes[${r}].id is missing`)}),(!f(e.output)||typeof e.output.digest!="string")&&n.push("output digest is missing"),(!f(e.verification)||typeof e.verification.level!="string")&&n.push("verification level is missing"),n}async function _(e,n){let t=[];if(!f(n))return["evidence bundle is not an object"];if(n.format!==b&&t.push(`evidence format is ${JSON.stringify(n.format)}, not ${b}`),n.version!==T&&t.push(`unsupported evidence version ${JSON.stringify(n.version)}`),n.cardId!==e.cardId)return t.push("evidence bundle belongs to a different card"),t;if(!Array.isArray(n.inputs))return[...t,"evidence has no inputs"];let r=new Map(e.inputs.map(i=>[i.sourceNodeId,i])),s=new Set;for(let i of n.inputs){if(!f(i)||typeof i.sourceNodeId!="string"){t.push("an evidence input has no sourceNodeId");continue}let d=r.get(i.sourceNodeId);if(!d){t.push(`evidence input ${JSON.stringify(i.sourceNodeId)} is not in this card`);continue}s.add(i.sourceNodeId);let c;try{c=i.encoding==="base64"?E(String(i.content??"")):new TextEncoder().encode(String(i.content??""))}catch(C){t.push(`evidence input ${i.sourceNodeId} is not decodable: ${C.message}`);continue}let p=`sha256:${$(await g().digest("SHA-256",c))}`;p!==d.digest&&t.push(`input ${i.sourceNodeId} does not match the card (evidence ${p.slice(0,19)}\u2026, card ${String(d.digest).slice(0,19)}\u2026)`)}for(let i of r.keys())s.has(i)||t.push(`no evidence supplied for input ${i}`);return t}async function I(e,n={}){let t=e;if(typeof e=="string")try{t=JSON.parse(e)}catch{return{valid:!1,mode:"structural",level:null,claimedLevel:null,signature:{signed:!1,valid:!1,reason:null},reasons:["that file is not valid JSON"],cardId:null}}let r=M(t),s=n.evidence?"evidence":"structural",i=await R(t);if(r.length>0)return{valid:!1,mode:s,level:null,claimedLevel:t?.verification?.level??null,signature:i,reasons:r,cardId:typeof t?.cardId=="string"?t.cardId:null};let d;try{d=await J(t)}catch(p){return{valid:!1,mode:s,level:null,claimedLevel:t.verification.level,signature:i,reasons:[`card cannot be canonicalized: ${p.message}`],cardId:t.cardId}}d!==t.cardId&&r.push("cardId does not match the card contents (edited or corrupted)"),i.signed&&!i.valid&&r.push(i.reason??"signature verification failed"),n.evidence&&r.push(...await _(t,n.evidence));let c=r.length===0;return{valid:c,mode:s,level:c?t.verification.level:null,claimedLevel:t.verification.level,signature:i,reasons:r,cardId:t.cardId}}var a={card:null,evidence:null,result:null},o=e=>document.getElementById(e);function l(e,n){let t=o("status");t.className=`status ${e}`,t.textContent=n,t.setAttribute("aria-live","polite")}function x(){let e=a.result,n=o("result");if(!e){n.hidden=!0;return}n.hidden=!1,o("verdict").className=`verdict ${e.valid?"pass":"fail"}`,o("verdict").textContent=e.valid?"Card is intact":"Card failed verification";let t=[];t.push(`<div class="row"><span>Mode</span><strong>${e.mode}</strong></div>`),t.push(`<div class="row"><span>Level</span><strong>${e.valid?`${e.claimedLevel} (claimed by the card)`:"\u2014"}</strong></div>`),t.push(`<div class="row"><span>Signature</span><strong>${e.signature.signed?e.signature.valid?"signed, signature valid":"signed, signature INVALID":"unsigned"}</strong></div>`),e.cardId&&t.push(`<div class="row mono"><span>cardId</span><code>${e.cardId}</code></div>`),o("details").innerHTML=t.join("");let r=o("reasons");e.reasons.length===0?r.innerHTML=`<p class="muted">${e.mode==="evidence"?"Structure, id and every supplied input digest match.":"Structure and id match. Inputs were not checked \u2014 drop an evidence bundle to check them."}</p>`:r.innerHTML=`<ul>${e.reasons.map(s=>`<li>${O(s)}</li>`).join("")}</ul>`}function O(e){return String(e).replace(/[&<>"']/g,n=>{switch(n){case"&":return"&amp;";case"<":return"&lt;";case">":return"&gt;";case'"':return"&quot;";default:return"&#39;"}})}async function y(){if(!a.card){l("idle","Drop a card to verify it.");return}try{l("busy","Checking\u2026"),a.result=await I(a.card,a.evidence?{evidence:a.evidence}:{}),x(),l(a.result.valid?"pass":"fail",a.result.valid?"Verified":"Not verified")}catch(e){a.result=null,o("result").hidden=!1,o("verdict").className="verdict fail",o("verdict").textContent="Verification could not run",o("details").innerHTML="",o("reasons").innerHTML=`<ul><li>${O(e.message)}</li></ul>`,l("fail","Error")}}function P(e){return new Promise((n,t)=>{let r=new FileReader;r.onload=()=>n(String(r.result??"")),r.onerror=()=>t(r.error??new Error("could not read the file")),r.readAsText(e)})}async function N(e){let n=[...e];if(n.length!==0){for(let t of n){let r=await P(t),s;try{s=JSON.parse(r)}catch{l("fail",`${t.name} is not JSON`);return}if(s?.format==="datastudio-card-evidence")a.evidence=s,l("busy",`Evidence loaded: ${t.name}`);else if(s?.format==="datastudio-run-card")a.card=s,l("busy",`Card loaded: ${t.name}`);else{l("fail",`${t.name} is neither a run card nor an evidence bundle`);return}}await y()}}function F(){let e=t=>{let r=document.getElementById(t);if(!r)return null;try{return JSON.parse(r.textContent||"")}catch{return null}},n=e("datastudio-embedded-card");return n?(a.card=n,a.evidence=e("datastudio-embedded-evidence"),!0):!1}function V(){let e=o("drop"),n=o("file");o("pick").addEventListener("click",()=>n.click()),n.addEventListener("change",()=>N(n.files)),e.addEventListener("dragover",t=>{t.preventDefault(),e.classList.add("over")}),e.addEventListener("dragleave",()=>e.classList.remove("over")),e.addEventListener("drop",async t=>{t.preventDefault(),e.classList.remove("over"),await N(t.dataTransfer.files)}),o("verify-pasted").addEventListener("click",async()=>{let t=o("pasted").value.trim();if(t){try{a.card=JSON.parse(t)}catch{l("fail","That is not valid JSON");return}a.evidence=null,await y()}}),o("clear").addEventListener("click",()=>{a.card=null,a.evidence=null,a.result=null,o("pasted").value="",o("file").value="",x(),l("idle","Cleared.")})}V();function A(){F()&&(l("busy",a.evidence?"This file contains a card and its evidence; checking\u2026":"This file contains a card; checking\u2026"),y())}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",A,{once:!0}):A();})();
+
+</script>
+</body>
+</html>
