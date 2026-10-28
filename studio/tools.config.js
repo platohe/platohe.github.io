@@ -117,7 +117,7 @@ window.TOOLS_CONFIG = [
     "show": true,
     "dir": "photostudio",
     "path": "photo",
-    "thumbnail": "/thumbnails/image-studio.png"
+    "thumbnail": "/thumbnails/photo-studio.png"
   },
   {
     "name": "video |STUDIO",
