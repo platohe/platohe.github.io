@@ -1,0 +1,348 @@
+{
+  "title": "Sample Deck",
+  "slides": [
+    {
+      "id": "sample-slide-1",
+      "title": "Welcome to presentation |STUDIO",
+      "background": "#0f172a",
+      "layout": "title-slide",
+      "transition": "fade",
+      "notes": "",
+      "elements": [
+        {
+          "id": "el-s1-title",
+          "type": "text",
+          "role": "title",
+          "x": 8,
+          "y": 28,
+          "width": 84,
+          "height": 18,
+          "content": "Welcome to presentation |STUDIO",
+          "style": {
+            "fontSize": 44,
+            "bold": true,
+            "color": "#ffffff",
+            "align": "center",
+            "fontFamily": "Aptos Display"
+          }
+        },
+        {
+          "id": "el-s1-subtitle",
+          "type": "text",
+          "role": "subtitle",
+          "x": 8,
+          "y": 52,
+          "width": 84,
+          "height": 12,
+          "content": "A modern slide builder with Mermaid, charts, and more",
+          "style": {
+            "fontSize": 20,
+            "color": "#94a3b8",
+            "align": "center",
+            "fontFamily": "Aptos Display"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sample-slide-2",
+      "title": "Features Overview",
+      "background": "#d83b01",
+      "layout": "section-header",
+      "transition": "fade",
+      "notes": "",
+      "elements": [
+        {
+          "id": "el-s2-title",
+          "type": "text",
+          "role": "title",
+          "x": 8,
+          "y": 35,
+          "width": 84,
+          "height": 20,
+          "content": "Features Overview",
+          "style": {
+            "fontSize": 44,
+            "bold": true,
+            "color": "#ffffff",
+            "align": "center",
+            "fontFamily": "Aptos Display"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sample-slide-3",
+      "title": "Built-in Mermaid Diagrams",
+      "background": "#ffffff",
+      "layout": "title-content",
+      "transition": "fade",
+      "notes": "",
+      "elements": [
+        {
+          "id": "el-s3-title",
+          "type": "text",
+          "role": "title",
+          "x": 8,
+          "y": 6,
+          "width": 84,
+          "height": 14,
+          "content": "Built-in Mermaid Diagrams",
+          "style": {
+            "fontSize": 36,
+            "bold": true,
+            "color": "#0f172a",
+            "align": "left",
+            "fontFamily": "Aptos Display"
+          }
+        },
+        {
+          "id": "el-s3-body",
+          "type": "text",
+          "role": "body",
+          "x": 8,
+          "y": 22,
+          "width": 84,
+          "height": 10,
+          "content": "Create flowcharts, sequence diagrams, and more using Mermaid syntax — rendered live inside your slides.",
+          "style": {
+            "fontSize": 16,
+            "color": "#475569",
+            "align": "left",
+            "fontFamily": "Aptos Display"
+          }
+        },
+        {
+          "id": "el-mermaid-sample",
+          "type": "mermaid",
+          "x": 8,
+          "y": 35,
+          "width": 84,
+          "height": 50,
+          "content": "graph LR\n  A[Start] --> B{Decision}\n  B -->|Yes| C[Result 1]\n  B -->|No| D[Result 2]",
+          "style": {}
+        }
+      ]
+    },
+    {
+      "id": "sample-slide-4",
+      "title": "QR Code Insert",
+      "background": "#f8fafc",
+      "layout": "title-content",
+      "transition": "fade",
+      "notes": "",
+      "elements": [
+        {
+          "id": "el-s4-title",
+          "type": "text",
+          "role": "title",
+          "x": 8,
+          "y": 6,
+          "width": 84,
+          "height": 14,
+          "content": "QR Code Insert",
+          "style": {
+            "fontSize": 36,
+            "bold": true,
+            "color": "#0f172a",
+            "align": "left",
+            "fontFamily": "Aptos Display"
+          }
+        },
+        {
+          "id": "el-s4-body",
+          "type": "text",
+          "role": "body",
+          "x": 8,
+          "y": 22,
+          "width": 50,
+          "height": 55,
+          "content": "Generate QR codes for links, WiFi, vCards\n\n• Link to websites and resources\n• Share WiFi credentials instantly\n• Include contact information",
+          "style": {
+            "fontSize": 16,
+            "color": "#475569",
+            "align": "left",
+            "fontFamily": "Aptos Display"
+          }
+        },
+        {
+          "id": "el-s4-qrcode",
+          "type": "qrcode",
+          "x": 62,
+          "y": 30,
+          "width": 28,
+          "height": 40,
+          "content": "https://example.com",
+          "style": {}
+        }
+      ]
+    },
+    {
+      "id": "sample-slide-5",
+      "title": "Side by Side Layout",
+      "background": "#ffffff",
+      "layout": "two-content",
+      "transition": "fade",
+      "notes": "",
+      "elements": [
+        {
+          "id": "el-s5-title",
+          "type": "text",
+          "role": "title",
+          "x": 8,
+          "y": 6,
+          "width": 84,
+          "height": 14,
+          "content": "Side by Side Layout",
+          "style": {
+            "fontSize": 36,
+            "bold": true,
+            "color": "#0f172a",
+            "align": "left",
+            "fontFamily": "Aptos Display"
+          }
+        },
+        {
+          "id": "el-s5-left",
+          "type": "text",
+          "role": "body",
+          "x": 5,
+          "y": 26,
+          "width": 43,
+          "height": 60,
+          "content": "• Feature one\n• Feature two\n• Feature three",
+          "style": {
+            "fontSize": 18,
+            "color": "#1e293b",
+            "align": "left",
+            "fontFamily": "Aptos Display",
+            "fill": "#f1f5f9"
+          }
+        },
+        {
+          "id": "el-s5-right",
+          "type": "text",
+          "role": "body",
+          "x": 52,
+          "y": 26,
+          "width": 43,
+          "height": 60,
+          "content": "• Item A\n• Item B\n• Item C",
+          "style": {
+            "fontSize": 18,
+            "color": "#1e293b",
+            "align": "left",
+            "fontFamily": "Aptos Display",
+            "fill": "#fff7f2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sample-slide-6",
+      "title": "Chart Slide",
+      "background": "#ffffff",
+      "layout": "title-content",
+      "transition": "fade",
+      "notes": "",
+      "elements": [
+        {
+          "id": "el-s6-title",
+          "type": "text",
+          "role": "title",
+          "x": 8,
+          "y": 6,
+          "width": 84,
+          "height": 14,
+          "content": "Chart Slide",
+          "style": {
+            "fontSize": 36,
+            "bold": true,
+            "color": "#0f172a",
+            "align": "left",
+            "fontFamily": "Aptos Display"
+          }
+        },
+        {
+          "id": "el-s6-body",
+          "type": "text",
+          "role": "body",
+          "x": 8,
+          "y": 22,
+          "width": 84,
+          "height": 10,
+          "content": "Data visualization",
+          "style": {
+            "fontSize": 16,
+            "color": "#475569",
+            "align": "left",
+            "fontFamily": "Aptos Display"
+          }
+        },
+        {
+          "id": "el-s6-chart",
+          "type": "chart",
+          "x": 8,
+          "y": 35,
+          "width": 84,
+          "height": 50,
+          "content": "",
+          "chartType": "bar",
+          "chartData": {
+            "labels": ["Q1", "Q2", "Q3", "Q4"],
+            "datasets": [
+              {
+                "label": "Revenue",
+                "data": [40, 65, 55, 80]
+              }
+            ]
+          },
+          "style": {}
+        }
+      ]
+    },
+    {
+      "id": "sample-slide-7",
+      "title": "Thank You!",
+      "background": "#1e1b4b",
+      "layout": "blank",
+      "transition": "fade",
+      "notes": "",
+      "elements": [
+        {
+          "id": "el-s7-title",
+          "type": "text",
+          "role": "title",
+          "x": 10,
+          "y": 30,
+          "width": 80,
+          "height": 18,
+          "content": "Thank You!",
+          "style": {
+            "fontSize": 48,
+            "bold": true,
+            "color": "#ffffff",
+            "align": "center",
+            "fontFamily": "Aptos Display"
+          }
+        },
+        {
+          "id": "el-s7-sub",
+          "type": "text",
+          "role": "body",
+          "x": 15,
+          "y": 55,
+          "width": 70,
+          "height": 12,
+          "content": "Start building your presentation today.",
+          "style": {
+            "fontSize": 20,
+            "color": "#a5b4fc",
+            "align": "center",
+            "fontFamily": "Aptos Display"
+          }
+        }
+      ]
+    }
+  ]
+}

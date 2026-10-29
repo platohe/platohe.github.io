@@ -1,0 +1,43 @@
+{
+  "version": "1.0.0",
+  "name": "Sample Project - Welcome to VideoStudio",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "layers": [
+    {
+      "id": "video-1",
+      "type": "video",
+      "name": "Welcome Text",
+      "visible": true,
+      "locked": false,
+      "operations": [
+        {
+          "id": "text-1",
+          "type": "text",
+          "startTime": 0,
+          "duration": 5,
+          "properties": {
+            "text": "Welcome to VideoStudio",
+            "fontSize": 72,
+            "color": "#0a84ff",
+            "x": 960,
+            "y": 540,
+            "opacity": 1
+          }
+        }
+      ]
+    }
+  ],
+  "layerOrder": ["video-1"],
+  "detectedScenes": [],
+  "exportSettings": {
+    "format": "mp4",
+    "codec": "h264",
+    "quality": "high",
+    "resolution": "1080p",
+    "fps": 30
+  }
+}

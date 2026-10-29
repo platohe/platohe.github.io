@@ -190,7 +190,7 @@ window.TOOLS_CONFIG = [
     "thumbnail": "/thumbnails/task-studio.svg"
   },
   {
-    "name": "vault |STUDIO",
+    "name": "Vault |STUDIO",
     "description": "Zero-knowledge encrypted password vault with AES-256-GCM encryption, TOTP 2FA, and password generator.",
     "category": "Security",
     "icons": "🔐",

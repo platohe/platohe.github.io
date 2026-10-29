@@ -1,0 +1,1 @@
+let t=null;async function c(){if(t)return t;try{const e=await fetch("/sample-deck.json");if(!e.ok)throw new Error(`HTTP ${e.status}`);const a=await e.json();return t=a,a}catch(e){return console.warn("[sampleDeck] fetch failed:",e.message),null}}export{c as loadSampleDeck};
