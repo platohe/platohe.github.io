@@ -23,10 +23,58 @@
         background-color: #f3f2f1;
         color: #242424;
       }
+      /* P5 — the static boot state that lives in #root until React's first
+         render replaces it. Without it the shell is empty, so a text or
+         assistive-tech reader gets the skip link and nothing else. */
+      #ns-boot {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        text-align: center;
+        padding: 24px;
+      }
+      #ns-boot .ns-boot-spinner {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        border: 3px solid #e1dfdd;
+        border-top-color: #7719aa;
+        animation: ns-boot-spin 0.9s linear infinite;
+      }
+      #ns-boot .ns-boot-title {
+        font-size: 15px;
+        color: #242424;
+      }
+      #ns-boot .ns-boot-detail {
+        font-size: 13px;
+        color: #616161;
+        max-width: 420px;
+        line-height: 1.5;
+      }
+      #ns-boot .ns-boot-action {
+        margin-top: 4px;
+        padding: 6px 16px;
+        border: 1px solid #d1d1d1;
+        border-radius: 4px;
+        background-color: #ffffff;
+        color: #242424;
+        font-family: inherit;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      #ns-boot .ns-boot-action:hover { background-color: #f3f2f1; }
+      @keyframes ns-boot-spin { to { transform: rotate(360deg); } }
+      @media (prefers-reduced-motion: reduce) {
+        #ns-boot .ns-boot-spinner { animation: none; }
+      }
     </style>
-    <script type="module" crossorigin src="./assets/index-BaLpRId-.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/react-window-Crh8kYnQ.js">
-    <link rel="modulepreload" crossorigin href="./assets/fluentui-DSPKTywG.js">
+    <script type="module" crossorigin src="./assets/index-DVCNF4Ok.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/react-window-UnAqezSe.js">
+    <link rel="modulepreload" crossorigin href="./assets/fluentui-BP2TtiB2.js">
     <link rel="modulepreload" crossorigin href="./assets/flexsearch-6JDP3Moc.js">
     <link rel="modulepreload" crossorigin href="./assets/prosemirror-DZ5AuX3C.js">
     <link rel="stylesheet" crossorigin href="./assets/index-V1jWYfQV.css">
@@ -34,6 +82,65 @@
   <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
   <body>
     <a href="#main-content" style="position: absolute; top: -40px; left: 0; background: #7719aa; color: white; padding: 8px 16px; z-index: 9999; text-decoration: none; font-size: 14px;" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Skip to content</a>
-    <div id="root"></div>
+    <div id="root">
+      <!-- P5 — boot fallback. React replaces these children on its first
+           render; if the bundle never mounts, the script below turns this
+           into an explicit failure state with a reload action instead of
+           leaving a blank page. -->
+      <div id="ns-boot" role="status" aria-live="polite">
+        <div class="ns-boot-spinner" aria-hidden="true"></div>
+        <p class="ns-boot-title">Loading notebooks…</p>
+        <p class="ns-boot-detail">note |STUDIO keeps every notebook on this device.</p>
+      </div>
+      <noscript>
+        <div style="padding: 24px; text-align: center; font-size: 14px; line-height: 1.6;">
+          <p><strong>note |STUDIO needs JavaScript.</strong></p>
+          <p>Enable JavaScript for this page to open your notebooks.</p>
+        </div>
+      </noscript>
+    </div>
+    <script>
+      (function () {
+        // P5 — never leave the shell silent. If startup fails, replace the
+        // boot state with a message and a reload button. Every failure path
+        // checks that the fallback still exists, so a live app is never
+        // overwritten by a late error.
+        var boot = document.getElementById('ns-boot')
+        function fail(detail) {
+          if (!boot || !boot.isConnected) return
+          boot.setAttribute('role', 'alert')
+          boot.innerHTML = ''
+          var title = document.createElement('p')
+          title.className = 'ns-boot-title'
+          title.textContent = 'note |STUDIO could not start'
+          var why = document.createElement('p')
+          why.className = 'ns-boot-detail'
+          why.textContent = detail
+          var action = document.createElement('button')
+          action.type = 'button'
+          action.className = 'ns-boot-action'
+          action.textContent = 'Reload'
+          action.addEventListener('click', function () { window.location.reload() })
+          boot.appendChild(title)
+          boot.appendChild(why)
+          boot.appendChild(action)
+        }
+        // Resource errors (a missing image) fire with the element as target
+        // and never block mounting, so only window-level errors count.
+        window.addEventListener('error', function (e) {
+          if (e.target && e.target !== window) return
+          fail(e.message ? 'Startup error: ' + e.message : 'A required script failed to load.')
+        })
+        window.addEventListener('unhandledrejection', function (e) {
+          var message = e.reason && e.reason.message ? e.reason.message : ''
+          fail(message ? 'Startup failed: ' + message : 'Startup failed unexpectedly.')
+        })
+        setTimeout(function () {
+          if (boot && boot.isConnected && boot.getAttribute('role') === 'status') {
+            fail('Loading is taking longer than expected. Check your connection, then reload.')
+          }
+        }, 20000)
+      })()
+    </script>
   </body>
 </html>
