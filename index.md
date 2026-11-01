@@ -12,11 +12,6 @@
 <br>An ASCII art studio in your browser: render text as big FIGlet banner art, convert any image to ASCII art, and turn unicode text into plain ASCII — no accounts, all local.
 <br><br><img src="images/asciistudio.png?raw=true" /><br><br>
 
----
-[FileSight (2026)](https://platohe.github.io/filesight/)
-<br>A universal, extensible file viewer and action hub that accepts any file type and provides a viewer plus context-aware actions.
-<br><br><img src="images/filesight.png?raw=true" /><br><br>
-
 
 ---
 [Awesome Ideas! (2022)](https://platohe.github.io/idea/)
