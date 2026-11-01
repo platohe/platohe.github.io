@@ -2,8 +2,8 @@ title: Plato He # your name (or website title) here
 logo: "/images/logo.png?raw=true" # your photo (or logo) here
 description:
   > # your text below (remove <br> elements if you don't need line breaks)
-  A passionate software developer, over years learned/used, Assembly, FORTRAN, Basic, Pascal, C, C++, C#, Python, Ruby, Swift, Kotlin, Rust, Java, Javascript/Typescript, among others; currently focusing on mobile app and full stack development
-  <br><br>
+ A passionate engineer whose journey spans decades of technology — from writing in Assembly, FORTRAN, C/C++ to building modern full-stack applications with Python, TypeScript, Rust. Today, that foundation is augmented by hands-on work with AI technologies: using LLMs, agentic tooling, and AI-assisted code generation to ship higher-quality software, faster.
+ <br><br>
 
 theme: jekyll-theme-minimal
 google_analytics: UA-000000-0 # your Google Analytics tracking ID here
