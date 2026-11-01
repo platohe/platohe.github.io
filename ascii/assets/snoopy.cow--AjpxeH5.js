@@ -1,0 +1,29 @@
+var e=`##
+## acsii picture From: kwok@menpachi.nmfs.hawaii.edu (William Kwok)
+## from http://www.ascii-art.de/ascii/s/snoopy.txt
+$the_cow = <<EOC;
+ $thoughts
+  $thoughts          , ----.
+   $thoughts        -  -     \\
+      ,__.,'           \\\\
+    .'                 *\\
+   /       $eye   $eye     / **\\\\
+  .                 / ****.
+  |    mm           | ****|
+   \\\\                | ****|
+    \\ ._______      \\\\ ****/
+              \\\\      /\\---'
+               \\\\___(
+               /~~~~\\\\
+              /      \\\\
+             /      | \\\\
+            |       |  \\\\
+  , ~~ .    |, ~~ . |  |\\\\
+ ( |||| )   ( |||| )(,,,)\\
+( |||||| )-( |||||| )    | ^
+( |||||| ) ( |||||| )    |'/
+( |||||| )-( |||||| )___,'-
+ ( |||| )   ( |||| )
+  \\ ~~ '     \\ ~~ '
+EOC
+`;export{e as default};

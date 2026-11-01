@@ -1,0 +1,12 @@
+var e=`# Kilroy
+# from http://www.ascii-art.de/ascii/jkl/kilroy.txt (accessed 8/14/2014)
+$the_cow = <<EOC;
+     $thoughts 
+      $thoughts
+           ,,,
+          (0 0)
+   +---ooO-(_)-Ooo---+
+   |                 |
+EOC
+
+`;export{e as default};

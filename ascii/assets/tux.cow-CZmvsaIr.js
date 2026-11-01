@@ -1,0 +1,17 @@
+var e=`##
+## TuX
+## (c) pborys@p-soft.silesia.linux.org.pl 
+##
+$the_cow = <<EOC;
+   $thoughts
+    $thoughts
+        .--.
+       |$eye_$eye |
+       |:_/ |
+      //   \\\\ \\\\
+     (|     | )
+    /'\\\\_   _/\\\\\\
+    \\\\___)=(___/
+
+EOC
+`;export{e as default};

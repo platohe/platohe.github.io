@@ -1,0 +1,1 @@
+import{T as e,c as t,f as n,u as r,w as i}from"./path-BgowCEVL.js";function a(e){return function(t,r){var a=n(t),o=n(r),s=e(a*o);return s===1/0?[2,0]:[s*o*i(t),s*i(r)]}}function o(a){return function(o,s){var c=e(o*o+s*s),l=a(c),u=i(l),d=n(l);return[r(o*u,c*d),t(c&&s*u/c)]}}export{a as n,o as t};

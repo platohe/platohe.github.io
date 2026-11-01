@@ -1,0 +1,13 @@
+var e=`##
+## A kitten of sorts, I think
+##
+$the_cow = <<EOC;
+     $thoughts
+      $thoughts
+       ("\\-'  '-/") .___..--' ' "\\-._
+         \\ $eye_ $eye  )    \\-.   (      ) .\\-.__. \\)
+         (_Y_.) ' ._   )   \\._\\ ;  \\\\ -. .-'
+      _.. \\--'_..-_/   /--' _ .' ,4
+   ( i l ),-''  ( l i),'  ( ( ! .-'    
+EOC
+`;export{e as default};

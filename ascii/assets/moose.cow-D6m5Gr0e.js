@@ -1,0 +1,10 @@
+var e=`$the_cow = <<EOC;
+  $thoughts
+   $thoughts   \\\\_\\\\_    _/_/
+    $thoughts      \\\\__/
+           ($eyes)\\\\_______
+           (__)\\\\       )\\\\/\\\\
+            $tongue ||----- |
+               ||     ||
+EOC
+`;export{e as default};

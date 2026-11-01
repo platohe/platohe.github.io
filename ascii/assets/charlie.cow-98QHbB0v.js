@@ -1,0 +1,19 @@
+var e=`##
+## KMB is God.
+##
+$the_cow = <<EOC;
+  $thoughts
+   $thoughts
+    $thoughts     ,, ＿
+        ／      ｀､
+       /   (_ﾉL_） ヽ
+      /   ´・ ・｀  l
+    （l      し     l）
+      l     ＿＿    l
+      >  ､ _      ィ
+    ／        ￣    ヽ
+   /  |              iヽ
+   |＼|              |/|
+   |  ||/＼／＼／＼/ | |
+EOC
+`;export{e as default};

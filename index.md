@@ -4,37 +4,19 @@
 <br>STUDIO Suite was built to prove that you can have professional-grade tools without subscriptions, accounts, or cloud dependency. Every studio runs entirely in your browser, processes your files locally, and stores your data on your device.
 <br><br><img src="images/studio.png?raw=true" /><br><br>
 
+[Visualization (2026)](https://platohe.github.io/visualization/)
+<br>A data visualization studio with 40+ interactive chart types, dataset imports, and embeddable widgets — search and filter charts by data type and tags, all in your browser.
+<br><br><img src="images/visualizationstudio.png?raw=true" /><br><br>
+
+[ASCII Art (2026)](https://platohe.github.io/ascii/)
+<br>An ASCII art studio in your browser: render text as big FIGlet banner art, convert any image to ASCII art, and turn unicode text into plain ASCII — no accounts, all local.
+<br><br><img src="images/asciistudio.png?raw=true" /><br><br>
+
 ---
 [FileSight (2026)](https://platohe.github.io/filesight/)
 <br>A universal, extensible file viewer and action hub that accepts any file type and provides a viewer plus context-aware actions.
 <br><br><img src="images/filesight.png?raw=true" /><br><br>
 
----
-[DataMorph (2026)](https://platohe.github.io/datamorph/)
-<br>A data transformation engine with a pipeline builder, 250+ chainable operations, and smart auto-detection — designed to eliminate the need for dozens of scattered online tools.
-<br><br><img src="images/datamorph.png?raw=true" /><br><br>
-
----
-[MarkdownStudio (2026)](https://platohe.github.io/mdstudio/)
-<br>A distraction-free markdown writing tool, it includes advanced features like focus mode, typewriter mode, Zen mode, outline navigation, snippet management, making it a comprehensive productivity suite rather than just a simple markdown editor
-<br><br><img src="images/mdstudio.png?raw=true" /><br><br>
-
----
-[TaskFlow (2026)](https://platohe.github.io/taskflow/)
-<br>A minimalist yet powerful task management system with natural language input ("submit report tomorrow at 2pm #work"), Kanban/Calendar views, project hierarchy.
-<br><br><img src="images/taskflow.png?raw=true" /><br><br>
-
-
----
-[VaultGuard (2026)](https://platohe.github.io/vaultguard/)
-<br>A military-grade local password manager with zero-knowledge architecture, data never leaves your device and is protected with industry-standard encryption.
-<br><br><img src="images/vaultguard.png?raw=true" /><br><br>
-
-
----
-[Snapnote (2026)](https://platohe.github.io/snapnote/)
-<br>A fast, all-encompassing system for content capture and creation. It consolidates text notes while simultaneously providing a system-wide text expansion engine to accelerate writing and data entry.
-<br><img src="images/snapnote.png?raw=true" /><br><br>
 
 ---
 [Awesome Ideas! (2022)](https://platohe.github.io/idea/)

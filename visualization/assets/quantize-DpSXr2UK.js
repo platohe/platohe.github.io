@@ -1,0 +1,1 @@
+function e(e,t){for(var n=Array(t),r=0;r<t;++r)n[r]=e(r/(t-1));return n}export{e as t};

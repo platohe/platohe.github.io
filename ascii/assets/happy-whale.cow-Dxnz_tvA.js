@@ -1,0 +1,20 @@
+var e=`# happy whale
+#
+# modified from http://www.chris.com/ascii/index.php?art=animals/other%20(water)
+$the_cow = <<EOC;
+   $thoughts
+    $thoughts
+     $thoughts
+        __ \\ / __
+       /  \\\\ | /  \\\\
+           \\\\|/
+       _.---v---.,_
+      /            \\\\  /\\\\__/\\\\
+     /              \\\\ \\\\_  _/
+     |__ @           |_/ /
+      _/                / 
+      \\\\       \\\\__,     /  
+   ~~~~\\\\~~~~~~~~~~~~~~\\~~~
+
+EOC
+`;export{e as default};

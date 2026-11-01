@@ -1,0 +1,13 @@
+var e=`# Bill the Cat
+#
+# Based on 'ack --th[pt]+t+'
+#  from http://beyondgrep.com/ack-2.14-single-file
+$the_cow = <<EOC;
+ $thoughts
+  $thoughts
+ _   /|
+ \\\\'o.O'
+ =(___)=
+    U
+EOC
+`;export{e as default};

@@ -1,0 +1,15 @@
+var e=`# Kitten
+#
+# based on rfksay by Andrew Northern
+# http://robotfindskitten.org/aw.cgi?main=software.rfk#rfksay
+#
+$the_cow = <<EOC;
+   $thoughts
+    $thoughts
+
+     |\\\\_/|
+     |o o|__
+     --*--__\\\\
+     C_C_(___)
+EOC
+`;export{e as default};

@@ -1,0 +1,11 @@
+var e=`##
+## A cute little hedgehog
+##
+$the_cow = <<EOC;
+  $thoughts
+   $thoughts ..:::::::::.
+    ::::::::::::::
+   /. \\::::::::::::
+  O__,_:::::::::::'
+EOC
+`;export{e as default};

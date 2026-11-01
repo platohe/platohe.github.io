@@ -1,0 +1,17 @@
+var e=`##
+## ひよ子
+##
+$the_cow = <<EOC;
+  $thoughts
+   $thoughts
+    $thoughts
+      ,､ ,._
+      ﾉ ・  ヽ
+     / :::   i  
+    / :::    ﾞ､
+   ,i:::       \\ｰ-､
+   |:::           i
+   !::::..        ﾉ
+    \\ー――――'" 
+EOC
+`;export{e as default};

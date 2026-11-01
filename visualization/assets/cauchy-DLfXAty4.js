@@ -1,0 +1,1 @@
+import{n as e}from"./normal-CCmgNz36.js";var t=(function e(t){function n(e,n){return e=e==null?0:+e,n=n==null?1:+n,function(){return e+n*Math.tan(Math.PI*t())}}return n.source=e,n})(e);export{t};

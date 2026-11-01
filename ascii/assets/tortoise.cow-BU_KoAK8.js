@@ -1,0 +1,11 @@
+var e=`# Tortoise
+# from http://svn.haxx.se/tsvn/archive-2005-06/1030.shtml (accessed 9/11/2014)
+$the_cow = <<EOC;
+  $thoughts
+   $thoughts       ___
+      oo  // \\\\\\\\
+     (_,\\\\/ \\\\_/ \\\\
+       \\\\ \\\\_/_\\\\_/>
+       /_/   \\\\_\\\\
+EOC
+`;export{e as default};

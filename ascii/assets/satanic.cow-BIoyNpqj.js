@@ -1,0 +1,13 @@
+var e=`##
+## Satanic cow, source unknown.
+##
+$the_cow = <<EOC;
+     $thoughts
+      $thoughts  (__)  
+         (\\\\/)  
+  /-------\\\\/    
+ / | 666 ||$tongue  
+*  ||----||      
+   ~~    ~~      
+EOC
+`;export{e as default};

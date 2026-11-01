@@ -1,0 +1,18 @@
+var e=`##
+## The cow from a file called cow-n-horn, artist unknown.
+##
+$other_eye = chop($eyes);
+$eyes .= " $other_eye";
+$the_cow = <<EOC;
+  $thoughts
+   $thoughts    
+       (__)               
+        $eyes\\\\               
+       ('') \\\\---------     
+        $tongue\\\\           \\\\    
+           |          |\\\\   
+           ||---(  )_|| *  
+           ||    UU  ||    
+           ==        ==    
+EOC
+`;export{e as default};

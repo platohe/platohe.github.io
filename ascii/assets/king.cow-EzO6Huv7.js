@@ -1,0 +1,22 @@
+var e=`# King (Chess piece)
+#
+# from http://www.chessvariants.org/d.pieces/ascii.html
+#   by David Moeser
+#
+$the_cow = <<EOC;
+ $thoughts
+  $thoughts
+    .::.
+    _::_
+  _/____\\\\_
+  \\\\      /
+   \\\\____/
+   (____)
+    |  |
+    |__|
+   /    \\\\
+  (______)
+ (________)
+ /________\\\\
+EOC
+`;export{e as default};

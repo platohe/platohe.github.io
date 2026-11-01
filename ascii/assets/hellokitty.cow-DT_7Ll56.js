@@ -1,0 +1,13 @@
+var e=`##
+## Hello Kitty
+##
+$the_cow = <<EOC;
+  $thoughts
+   $thoughts
+      /\\\\_)o<
+     |      \\\\
+     | $eye . $eye|
+      \\\\_____/
+         $tongue
+EOC
+`;export{e as default};

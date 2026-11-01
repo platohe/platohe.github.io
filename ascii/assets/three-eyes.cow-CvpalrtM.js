@@ -1,0 +1,13 @@
+var e=`##
+## A cow with three eyes, brought to you by dpetrou@csua.berkeley.edu
+##
+$extra = chop($eyes);
+$eyes .= ($extra x 2);
+$the_cow = <<EOC;
+        $thoughts  ^___^
+         $thoughts ($eyes)\\\\_______
+           (___)\\\\       )\\\\/\\\\
+            $tongue  ||----w |
+                ||     ||
+EOC
+`;export{e as default};

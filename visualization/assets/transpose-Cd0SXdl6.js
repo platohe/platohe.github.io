@@ -1,0 +1,1 @@
+import{t as e}from"./min-CCch3uox.js";function t(t){if(!(s=t.length))return[];for(var r=-1,i=e(t,n),a=Array(i);++r<i;)for(var o=-1,s,c=a[r]=Array(s);++o<s;)c[o]=t[o][r];return a}function n(e){return e.length}export{t};

@@ -1,0 +1,21 @@
+var e=`# C3PO
+#
+# adapted from 'telnet -e x towel.blinkenlights.nl'
+$the_cow = <<EOC;
+   $thoughts
+    $thoughts
+       /~\\\\
+      |oo )
+      _\\\\=/_
+     /     \\\\
+    //|/.\\\\|\\\\\\\\
+   ||  \\\\_/  ||
+   || |\\\\ /| ||
+    \\# \\\\_ _/  \\#
+      | | |
+      | | |
+      []|[]
+      | | |
+     /_]_[_\\\\
+EOC
+`;export{e as default};

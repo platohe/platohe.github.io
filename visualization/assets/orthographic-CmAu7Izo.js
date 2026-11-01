@@ -1,0 +1,1 @@
+import{c as e,f as t,m as n,w as r}from"./path-BgowCEVL.js";import{t as i}from"./projection-B_oGyOHV.js";import{t as a}from"./azimuthal-ErZzSYEE.js";function o(e,n){return[t(n)*r(e),r(n)]}o.invert=a(e);function s(){return i(o).scale(249.5).clipAngle(90+n)}export{s as t};
