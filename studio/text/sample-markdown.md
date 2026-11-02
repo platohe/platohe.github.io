@@ -28,6 +28,20 @@ Use `#` for main headings, `##` for subheadings, and so on.
 2. Second item
 3. Third item
 
+### Task list
+
+- [x] Set a writing goal
+- [ ] Draft the next section
+- [ ] Export and share
+
+### Table
+
+| Feature | Where to find it | Offline |
+| ------- | ---------------- | :------: |
+| Writing goals | Status bar | Yes |
+| Markdown preview | Ctrl+Shift+V | Yes |
+| Daily notes | Ctrl+D | Yes |
+
 ### Code
 
 Inline code uses backticks: `const hello = "world"`
