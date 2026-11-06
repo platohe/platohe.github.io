@@ -3,6 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // GitHub Pages deep-link restore (companion to the site-root 404.html that
+      // this build ships). Pages cannot see client-side routes, so a refresh on
+      // /studio/about is answered with 404.html, which forwards the route here as
+      // '?/about'. Put it back on the address bar before the router reads the
+      // path, or the deep link lands on the home page instead.
+      (function () {
+        var l = window.location;
+        if (l.search && l.search.indexOf('?/') === 0) {
+          var path = l.search.slice(2).split('&')[0];
+          // The bundle and stylesheet are referenced relatively ('./assets/...'),
+          // so they resolve against the directory this shell was served from.
+          // Pin that directory first: once the address becomes a nested route
+          // such as /studio/a/b, the same tags resolve to /studio/a/assets/...
+          // and the app never starts.
+          var base = document.createElement('base');
+          base.href = l.pathname;
+          document.head.insertBefore(base, document.head.firstChild);
+          window.history.replaceState(null, '', l.pathname + path + l.hash);
+        }
+      })();
+    </script>
     <title>STUDIO Suite — Offline-First Productivity Platform</title>
     <meta name="description" content="STUDIO Suite: offline-first, local-first web studios for productivity, media, development, and engineering. No cloud. No accounts. Your data stays yours." />
     <meta name="theme-color" content="#0067c0" />
