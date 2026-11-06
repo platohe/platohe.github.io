@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23EB1000'/><path d='M8 24.5C9.5 21 11.5 16 13 12.5C11 9 9.5 6.5 11 6C12.5 5.5 14 8 15 11C18 10 21.5 9 23 9.5C24.5 10 24.5 12 23 13C21 14 17.5 14.5 14.5 15.5C13 19 11 23 9.5 24.5C8.5 25.5 7 26 6.5 25C6 24 7 24.5 8 24.5Z' fill='white'/></svg>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#EB1000" />
-    <title>pdf |STUDIO</title>
+    <title>PDF — STUDIO Suite</title>
     <meta name="description" content="pdf |STUDIO — open, read, annotate, fill, sign and save PDFs locally in your browser. Nothing is uploaded." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -117,12 +117,35 @@
         border-top: 1px solid #e5e7eb;
         padding-top: 12px;
       }
+      /* B-01: the static failure surface. If the editor cannot load, the open
+         operation's named error is written here, in the HTML shell, so the user
+         never sees an errorless, endlessly loading page. */
+      #boot-error {
+        margin-top: 16px;
+        padding: 12px 14px;
+        border-left: 4px solid #EB1000;
+        background: #fef2f2;
+        color: #7f1d1d;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+      #boot-error[hidden] { display: none; }
+      #boot-error .boot-error-title { font-weight: 700; margin-bottom: 4px; }
+      #boot-error .boot-error-code {
+        display: inline-block;
+        margin-top: 8px;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #9ca3af;
+      }
     </style>
-    <script type="module" crossorigin src="./assets/index-JnwywtVI.js"></script>
+    <script type="module" crossorigin src="./assets/index-Cqci0lEL.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-VD4fOmvT.css">
     <link rel="apple-touch-icon" sizes="180x180" href="./icon-192.png">
   <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
   <body>
+    <a href="/" aria-label="Back to Studios" style="position:fixed;top:12px;left:12px;z-index:9999;background:#0067c0;color:#fff;padding:6px 12px;border-radius:8px;font-family:'Outfit',sans-serif;font-size:13px;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.15);font-weight:500;">← Back to Studios</a>
     <div id="root">
       <div id="boot-shell">
         <div class="boot-card">
@@ -141,6 +164,12 @@
 
           <h2>Nothing is uploaded</h2>
           <p>Files are read and edited in this browser. There is no server step, no account required and no cloud cache. The document you see on first load is a labelled <strong>sample document</strong>, not a real agreement &mdash; the sample is replaced as soon as you open your own file.</p>
+
+          <div id="boot-error" role="alert" hidden>
+            <div class="boot-error-title"></div>
+            <div class="boot-error-message"></div>
+            <div class="boot-error-code"></div>
+          </div>
 
           <div class="boot-status">Loading the editor&hellip;</div>
         </div>
@@ -170,6 +199,21 @@
           if (!file) return
           window.__pdfstudioBootFile = file
           window.dispatchEvent(new CustomEvent('pdfstudio:boot-file'))
+        })
+
+        // A failed open must always say what failed. The editor dispatches this
+        // event; the shell renders the named error even before React mounts.
+        window.addEventListener('pdfstudio:load-failure', function (e) {
+          var box = document.getElementById('boot-error')
+          if (!box) return
+          var detail = (e && e.detail) || {}
+          if (!detail.title) { box.hidden = true; return }
+          box.hidden = false
+          box.querySelector('.boot-error-title').textContent = detail.title
+          box.querySelector('.boot-error-message').textContent = detail.message || ''
+          box.querySelector('.boot-error-code').textContent = detail.code ? 'Failure class: ' + detail.code : ''
+          var status = document.querySelector('#boot-shell .boot-status')
+          if (status) status.textContent = 'The file was not opened. Nothing was uploaded or changed.'
         })
       })()
     </script>

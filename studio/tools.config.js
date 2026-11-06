@@ -160,7 +160,7 @@ window.TOOLS_CONFIG = [
     "thumbnail": "/thumbnails/formula-studio.svg"
   },
   {
-    "name": "SnapNote",
+    "name": "snapnote |STUDIO",
     "description": "Fast capture scratchpad with OCR text recognition, snippets, tags, and rapid search.",
     "category": "Office",
     "icons": "⚡",
