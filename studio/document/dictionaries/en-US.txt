@@ -1,0 +1,30 @@
+# Bundled en-US dictionary (D4)
+# Canonical source: src/utils/bundledDictionary.ts (COMPACT_EN_US_WORDS).
+# That module is compiled into the JS chunk, which the PWA precache includes
+# via globPatterns **/*.{js,css,html,...}; this file is the human-readable
+# mirror for code review and is NOT fetched at runtime.
+# First-enable of spellcheck uses the bundled list with the network off;
+# Harper Tier-0 WASM remains a separate on-demand grammar asset.
+#
+# Sample of the bundled vocabulary (full list in bundledDictionary.ts):
+the
+be
+to
+of
+and
+a
+in
+that
+have
+i
+it
+for
+not
+on
+with
+verification
+document
+check
+offline
+bundled
+dictionary
