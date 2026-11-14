@@ -7,7 +7,23 @@ window.TOOLS_CONFIG = [
     "show": true,
     "dir": "documentstudio",
     "path": "document",
-    "thumbnail": "/thumbnails/document-studio.png"
+    "thumbnail": "/thumbnails/document-studio.png",
+    "accepts": [
+      ".docx",
+      ".odt",
+      ".md",
+      ".txt",
+      ".rtf",
+      ".html"
+    ],
+    "mime": [
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "application/vnd.oasis.opendocument.text",
+      "text/markdown",
+      "text/plain",
+      "application/rtf",
+      "text/html"
+    ]
   },
   {
     "name": "spreadsheet |STUDIO",
@@ -17,7 +33,17 @@ window.TOOLS_CONFIG = [
     "show": true,
     "dir": "spreadsheetstudio",
     "path": "spreadsheet",
-    "thumbnail": "/thumbnails/spreadsheet-studio.png"
+    "thumbnail": "/thumbnails/spreadsheet-studio.png",
+    "accepts": [
+      ".xlsx",
+      ".csv",
+      ".ods"
+    ],
+    "mime": [
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "text/csv",
+      "application/vnd.oasis.opendocument.spreadsheet"
+    ]
   },
   {
     "name": "presentation |STUDIO",
@@ -27,7 +53,18 @@ window.TOOLS_CONFIG = [
     "show": true,
     "dir": "presentationstudio",
     "path": "presentation",
-    "thumbnail": "/thumbnails/presentation-studio.png"
+    "thumbnail": "/thumbnails/presentation-studio.png",
+    "accepts": [
+      ".pptx",
+      ".odp",
+      ".nxp",
+      ".json"
+    ],
+    "mime": [
+      "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "application/vnd.oasis.opendocument.presentation",
+      "application/json"
+    ]
   },
   {
     "name": "note |STUDIO",
@@ -37,7 +74,17 @@ window.TOOLS_CONFIG = [
     "show": true,
     "dir": "notestudio",
     "path": "note",
-    "thumbnail": "/thumbnails/note-studio.png"
+    "thumbnail": "/thumbnails/note-studio.png",
+    "accepts": [
+      ".md",
+      ".txt",
+      ".json"
+    ],
+    "mime": [
+      "text/markdown",
+      "text/plain",
+      "application/json"
+    ]
   },
   {
     "name": "pdf |STUDIO",
@@ -47,7 +94,13 @@ window.TOOLS_CONFIG = [
     "show": true,
     "dir": "pdfstudio",
     "path": "pdf",
-    "thumbnail": "/thumbnails/pdf-studio.png"
+    "thumbnail": "/thumbnails/pdf-studio.png",
+    "accepts": [
+      ".pdf"
+    ],
+    "mime": [
+      "application/pdf"
+    ]
   },
   {
     "name": "task |STUDIO",
@@ -57,7 +110,15 @@ window.TOOLS_CONFIG = [
     "show": true,
     "dir": "taskstudio",
     "path": "task",
-    "thumbnail": "/thumbnails/task-studio.png"
+    "thumbnail": "/thumbnails/task-studio.png",
+    "accepts": [
+      ".csv",
+      ".json"
+    ],
+    "mime": [
+      "text/csv",
+      "application/json"
+    ]
   },
   {
     "name": "canvas |STUDIO",
@@ -67,7 +128,19 @@ window.TOOLS_CONFIG = [
     "show": true,
     "dir": "canvasstudio",
     "path": "canvas",
-    "thumbnail": "/thumbnails/canvas-studio.png"
+    "thumbnail": "/thumbnails/canvas-studio.png",
+    "accepts": [
+      ".svg",
+      ".json",
+      ".drawio",
+      ".png"
+    ],
+    "mime": [
+      "image/svg+xml",
+      "application/json",
+      "application/x-drawio",
+      "image/png"
+    ]
   },
   {
     "name": "calendar |STUDIO",
@@ -77,17 +150,13 @@ window.TOOLS_CONFIG = [
     "show": true,
     "dir": "calendarstudio",
     "path": "calendar",
-    "thumbnail": "/thumbnails/calendar-studio.png"
-  },
-  {
-    "name": "web |STUDIO",
-    "description": "Confluence-inspired web browser-based development environment with integrated tools for building and testing web applications.",
-    "category": "Office",
-    "icons": "🌐",
-    "show": false,
-    "dir": "webstudio",
-    "path": "web",
-    "thumbnail": "/thumbnails/web-studio.png"
+    "thumbnail": "/thumbnails/calendar-studio.png",
+    "accepts": [
+      ".ics"
+    ],
+    "mime": [
+      "text/calendar"
+    ]
   },
   {
     "name": "text |STUDIO",
@@ -97,17 +166,26 @@ window.TOOLS_CONFIG = [
     "show": true,
     "dir": "textstudio",
     "path": "text",
-    "thumbnail": "/thumbnails/text-studio.png"
-  },
-  {
-    "name": "markdown |STUDIO",
-    "description": "Distraction-free Markdown editor with live synchronous preview, KaTeX math, and export options.",
-    "category": "Office",
-    "icons": "📑",
-    "show": false,
-    "dir": "mdstudio",
-    "path": "md",
-    "thumbnail": "/thumbnails/markdown-studio.png"
+    "thumbnail": "/thumbnails/text-studio.png",
+    "accepts": [
+      ".txt",
+      ".md",
+      ".js",
+      ".ts",
+      ".jsx",
+      ".tsx",
+      ".json",
+      ".html",
+      ".css"
+    ],
+    "mime": [
+      "text/plain",
+      "text/markdown",
+      "text/javascript",
+      "application/json",
+      "text/html",
+      "text/css"
+    ]
   },
   {
     "name": "audio |STUDIO",
@@ -117,7 +195,24 @@ window.TOOLS_CONFIG = [
     "show": true,
     "dir": "audiostudio",
     "path": "audio",
-    "thumbnail": "/thumbnails/audio-studio.png"
+    "thumbnail": "/thumbnails/audio-studio.png",
+    "accepts": [
+      ".wav",
+      ".mp3",
+      ".ogg",
+      ".flac",
+      ".m4a",
+      ".mid",
+      ".midi"
+    ],
+    "mime": [
+      "audio/wav",
+      "audio/mpeg",
+      "audio/ogg",
+      "audio/flac",
+      "audio/mp4",
+      "audio/midi"
+    ]
   },
   {
     "name": "photo |STUDIO",
@@ -127,7 +222,26 @@ window.TOOLS_CONFIG = [
     "show": true,
     "dir": "photostudio",
     "path": "photo",
-    "thumbnail": "/thumbnails/photo-studio.png"
+    "thumbnail": "/thumbnails/photo-studio.png",
+    "accepts": [
+      ".png",
+      ".jpg",
+      ".jpeg",
+      ".webp",
+      ".gif",
+      ".svg",
+      ".bmp",
+      ".psd"
+    ],
+    "mime": [
+      "image/png",
+      "image/jpeg",
+      "image/webp",
+      "image/gif",
+      "image/svg+xml",
+      "image/bmp",
+      "image/vnd.adobe.photoshop"
+    ]
   },
   {
     "name": "video |STUDIO",
@@ -137,7 +251,19 @@ window.TOOLS_CONFIG = [
     "show": true,
     "dir": "videostudio",
     "path": "video",
-    "thumbnail": "/thumbnails/video-studio.png"
+    "thumbnail": "/thumbnails/video-studio.png",
+    "accepts": [
+      ".mp4",
+      ".webm",
+      ".mov",
+      ".mkv"
+    ],
+    "mime": [
+      "video/mp4",
+      "video/webm",
+      "video/quicktime",
+      "video/x-matroska"
+    ]
   },
   {
     "name": "data |STUDIO",
@@ -147,37 +273,19 @@ window.TOOLS_CONFIG = [
     "show": true,
     "dir": "datastudio",
     "path": "data",
-    "thumbnail": "/thumbnails/data-studio.png"
-  },
-  {
-    "name": "formula |STUDIO",
-    "description": "Advanced LaTeX mathematical formula editor, equation rendering, and scientific symbol palettes.",
-    "category": "Office",
-    "icons": "∑",
-    "show": false,
-    "dir": "formulastudio",
-    "path": "formula",
-    "thumbnail": "/thumbnails/formula-studio.svg"
-  },
-  {
-    "name": "snapnote |STUDIO",
-    "description": "Fast capture scratchpad with OCR text recognition, snippets, tags, and rapid search.",
-    "category": "Office",
-    "icons": "⚡",
-    "show": false,
-    "dir": "snapnote",
-    "path": "snapnote",
-    "thumbnail": "/thumbnails/snapnote.svg"
-  },
-  {
-    "name": "task |STUDIO",
-    "description": "Productivity task planner with Kanban boards, calendar views, milestones, and priority filters.",
-    "category": "Office",
-    "icons": "✅",
-    "show": false,
-    "dir": "taskflow",
-    "path": "taskflow",
-    "thumbnail": "/thumbnails/task-studio.svg"
+    "thumbnail": "/thumbnails/data-studio.png",
+    "accepts": [
+      ".csv",
+      ".json",
+      ".xml",
+      ".xlsx"
+    ],
+    "mime": [
+      "text/csv",
+      "application/json",
+      "application/xml",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    ]
   },
   {
     "name": "vault |STUDIO",
@@ -187,7 +295,13 @@ window.TOOLS_CONFIG = [
     "show": true,
     "dir": "vaultstudio",
     "path": "vault",
-    "thumbnail": "/thumbnails/vault-studio.png"
+    "thumbnail": "/thumbnails/vault-studio.png",
+    "accepts": [
+      ".json"
+    ],
+    "mime": [
+      "application/json"
+    ]
   },
   {
     "name": "file |STUDIO",
@@ -197,6 +311,16 @@ window.TOOLS_CONFIG = [
     "show": true,
     "dir": "filestudio",
     "path": "file",
-    "thumbnail": "/thumbnails/file-studio.png"
+    "thumbnail": "/thumbnails/file-studio.png",
+    "accepts": [
+      ".zip",
+      ".json",
+      ".csv"
+    ],
+    "mime": [
+      "application/zip",
+      "application/json",
+      "text/csv"
+    ]
   }
 ];
