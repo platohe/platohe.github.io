@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Resolve the theme before first paint: the suite preference if there is
+      // one, otherwise the OS. Mirrors applyTheme() in shared/chrome so the
+      // header never flashes the wrong appearance on load.
+      (function () {
+        try {
+          var stored = localStorage.getItem('studio:theme');
+          var theme = stored === 'dark' || stored === 'light'
+            ? stored
+            : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          var root = document.documentElement;
+          root.setAttribute('data-theme', theme);
+          root.classList.toggle('dark', theme === 'dark');
+          root.classList.toggle('dark-theme', theme === 'dark');
+          root.style.colorScheme = theme;
+          var size = localStorage.getItem('studio:font-size');
+          if (size === 'small' || size === 'large') root.setAttribute('data-font-size', size);
+          else root.removeAttribute('data-font-size');
+        } catch (e) { /* storage blocked: keep the markup's own default */ }
+      })();
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23107c10'/><rect x='5' y='14' width='22' height='13' rx='2' fill='none' stroke='white' stroke-width='2'/><path d='M13 14v-2a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2' fill='none' stroke='white' stroke-width='2'/><circle cx='16' cy='20' r='2.5' fill='white'/></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#107c10" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
+    />
+    <title>finance |STUDIO</title>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body, html, #root {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        background-color: var(--nexus-bg, #f5f4f0);
+        color: var(--nexus-fg, #0f1a2e);
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-DvjQwlzR.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-yfmyb_re.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./icon-192.png">
+  <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

@@ -2,6 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // Resolve the theme before first paint: the suite preference if there is
+      // one, otherwise the OS. Mirrors applyTheme() in shared/chrome so the
+      // header never flashes the wrong appearance on load.
+      (function () {
+        try {
+          var stored = localStorage.getItem('studio:theme');
+          var theme = stored === 'dark' || stored === 'light'
+            ? stored
+            : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          var root = document.documentElement;
+          root.setAttribute('data-theme', theme);
+          root.classList.toggle('dark', theme === 'dark');
+          root.classList.toggle('dark-theme', theme === 'dark');
+          root.style.colorScheme = theme;
+          // Font size is the same kind of preference: apply it in the same pass, so
+          // the chrome does not resize once React mounts.
+          var size = localStorage.getItem('studio:font-size');
+          if (size === 'small' || size === 'large') root.setAttribute('data-font-size', size);
+          else root.removeAttribute('data-font-size');
+        } catch (e) { /* storage blocked: keep the markup's own default */ }
+      })();
+    </script>
+
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23d83b01'/><path d='M9 8h8a6 6 0 0 1 0 12h-4v6H9V8zm4 8h4a2 2 0 1 0 0-4h-4v4z' fill='white'/></svg>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#d83b01" />
@@ -20,10 +44,10 @@
         color: #242424;
       }
     </style>
-    <script type="module" crossorigin src="./assets/index-BKgHbzZe.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/fluent-vendor-Bt-HqWN9.js">
-    <link rel="modulepreload" crossorigin href="./assets/jszip-BLA6ttQO.js">
-    <link rel="modulepreload" crossorigin href="./assets/pptxgenjs-Di7Lu-Ma.js">
+    <script type="module" crossorigin src="./assets/index-BSw_6J7h.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/fluent-vendor-QupgnRxj.js">
+    <link rel="modulepreload" crossorigin href="./assets/jszip-o4SqIU_c.js">
+    <link rel="modulepreload" crossorigin href="./assets/pptxgenjs-BUpdzgml.js">
     <link rel="modulepreload" crossorigin href="./assets/chart-vendor-BYT9cCfO.js">
     <link rel="stylesheet" crossorigin href="./assets/index-CE7Oo4La.css">
     <link rel="apple-touch-icon" sizes="180x180" href="./icon-192.png">

@@ -2,18 +2,42 @@
 <html lang="en" data-theme="dark" color-scheme="light dark">
 <head>
     <meta charset="UTF-8">
+    <script>
+      // Resolve the theme before first paint: the suite preference if there is
+      // one, otherwise the OS. Mirrors applyTheme() in shared/chrome so the
+      // header never flashes the wrong appearance on load.
+      (function () {
+        try {
+          var stored = localStorage.getItem('studio:theme');
+          var theme = stored === 'dark' || stored === 'light'
+            ? stored
+            : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          var root = document.documentElement;
+          root.setAttribute('data-theme', theme);
+          root.classList.toggle('dark', theme === 'dark');
+          root.classList.toggle('dark-theme', theme === 'dark');
+          root.style.colorScheme = theme;
+          // Font size is the same kind of preference: apply it in the same pass, so
+          // the chrome does not resize once React mounts.
+          var size = localStorage.getItem('studio:font-size');
+          if (size === 'small' || size === 'large') root.setAttribute('data-font-size', size);
+          else root.removeAttribute('data-font-size');
+        } catch (e) { /* storage blocked: keep the markup's own default */ }
+      })();
+    </script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#201f1e">
     <link rel="icon" type="image/svg+xml" href="./favicon.svg">
     <title>text |STUDIO</title>
     <!-- OpenDyslexic is no longer served by Google Fonts; the 'dyslexic' font
          pairing falls back to local/system fonts when it isn't installed. -->
-  <script type="module" crossorigin src="./index.DP-8_mAF.js"></script>
-  <link rel="modulepreload" crossorigin href="./vendor-editor.DKIrOb_U.js">
-  <link rel="modulepreload" crossorigin href="./vendor-core.D7gtlf10.js">
-  <link rel="modulepreload" crossorigin href="./vendor-utils.Bq5s6Lbs.js">
-  <link rel="stylesheet" crossorigin href="./vendor-editor.B8tIeeJt.css">
-  <link rel="stylesheet" crossorigin href="./index.VAIgAmMC.css">
+  <script type="module" crossorigin src="./index.Bhx62dR2.js"></script>
+  <link rel="modulepreload" crossorigin href="./vendor-editor.B6UOiSmK.js">
+  <link rel="modulepreload" crossorigin href="./vendor-core.C0ct0auQ.js">
+  <link rel="modulepreload" crossorigin href="./vendor-utils.D3dQyaZm.js">
+  <link rel="stylesheet" crossorigin href="./vendor-editor.CbyJr_c_.css">
+  <link rel="stylesheet" crossorigin href="./index.Duyj5lgv.css">
   <link rel="apple-touch-icon" sizes="180x180" href="./icon-192.png">
 <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
 <body>

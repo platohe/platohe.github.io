@@ -2,6 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // Resolve the theme before first paint: the suite preference if there is
+      // one, otherwise the OS. Mirrors applyTheme() in shared/chrome so the
+      // header never flashes the wrong appearance on load.
+      (function () {
+        try {
+          var stored = localStorage.getItem('studio:theme');
+          var theme = stored === 'dark' || stored === 'light'
+            ? stored
+            : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          var root = document.documentElement;
+          root.setAttribute('data-theme', theme);
+          root.classList.toggle('dark', theme === 'dark');
+          root.classList.toggle('dark-theme', theme === 'dark');
+          root.style.colorScheme = theme;
+          // Font size is the same kind of preference: apply it in the same pass, so
+          // the chrome does not resize once React mounts.
+          var size = localStorage.getItem('studio:font-size');
+          if (size === 'small' || size === 'large') root.setAttribute('data-font-size', size);
+          else root.removeAttribute('data-font-size');
+        } catch (e) { /* storage blocked: keep the markup's own default */ }
+      })();
+    </script>
+
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230078d4'/><rect x='6' y='9' width='20' height='18' rx='2' fill='none' stroke='white' stroke-width='2'/><line x1='6' y1='14' x2='26' y2='14' stroke='white' stroke-width='2'/><line x1='11' y1='6' x2='11' y2='11' stroke='white' stroke-width='2' stroke-linecap='round'/><line x1='21' y1='6' x2='21' y2='11' stroke='white' stroke-width='2' stroke-linecap='round'/><rect x='10' y='17' width='4' height='4' rx='1' fill='white'/></svg>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <meta name="mobile-web-app-capable" content="yes" />
@@ -24,7 +48,7 @@
         color: #0f1a2e;
       }
     </style>
-    <script type="module" crossorigin src="./assets/index-CUziZj6l.js"></script>
+    <script type="module" crossorigin src="./assets/index-C_mLIbPB.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-BCrCOphQ.css">
     <link rel="apple-touch-icon" sizes="180x180" href="./icon-192.png">
   <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>

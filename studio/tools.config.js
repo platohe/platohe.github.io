@@ -121,14 +121,14 @@ window.TOOLS_CONFIG = [
     ]
   },
   {
-    "name": "canvas |STUDIO",
+    "name": "whiteboard |STUDIO",
     "description": "Infinite canvas graphic design, vector illustration, mind maps, and collaborative whiteboard.",
     "category": "Office",
     "icons": "🎨",
     "show": true,
-    "dir": "canvasstudio",
-    "path": "canvas",
-    "thumbnail": "/thumbnails/canvas-studio.png",
+    "dir": "whiteboardstudio",
+    "path": "whiteboard",
+    "thumbnail": "/thumbnails/whiteboard-studio.png",
     "accepts": [
       ".svg",
       ".json",
@@ -215,6 +215,29 @@ window.TOOLS_CONFIG = [
     ]
   },
   {
+    "name": "music |STUDIO",
+    "description": "Pattern-based music workstation: audio-clock transport, synthesised instruments, step sequencer, patterns and local .nxm projects.",
+    "category": "Media",
+    "icons": "🎹",
+    "show": true,
+    "dir": "musicstudio",
+    "path": "music",
+    "thumbnail": "/thumbnails/music-studio.png",
+    "accepts": [
+      ".nxm",
+      ".mid",
+      ".midi",
+      ".wav",
+      ".mp3"
+    ],
+    "mime": [
+      "application/json",
+      "audio/midi",
+      "audio/wav",
+      "audio/mpeg"
+    ]
+  },
+  {
     "name": "photo |STUDIO",
     "description": "Image manipulation, filters, photo enhancements, batch conversion, and layer composition.",
     "category": "Media",
@@ -266,14 +289,14 @@ window.TOOLS_CONFIG = [
     ]
   },
   {
-    "name": "data |STUDIO",
+    "name": "pipe |STUDIO",
     "description": "Universal data transformation pipeline, schema mapping, format conversion, and visual data flows.",
     "category": "Data",
     "icons": "📊",
     "show": true,
-    "dir": "datastudio",
-    "path": "data",
-    "thumbnail": "/thumbnails/data-studio.png",
+    "dir": "pipestudio",
+    "path": "pipe",
+    "thumbnail": "/thumbnails/pipe-studio.png",
     "accepts": [
       ".csv",
       ".json",
@@ -290,7 +313,7 @@ window.TOOLS_CONFIG = [
   {
     "name": "vault |STUDIO",
     "description": "Zero-knowledge encrypted password vault with AES-256-GCM encryption, TOTP 2FA, and password generator.",
-    "category": "Security",
+    "category": "Data",
     "icons": "🔐",
     "show": true,
     "dir": "vaultstudio",
@@ -304,14 +327,14 @@ window.TOOLS_CONFIG = [
     ]
   },
   {
-    "name": "file |STUDIO",
+    "name": "archive |STUDIO",
     "description": "Your files, organized. Library, backup, compare, and sync — local-first, with optional cloud.",
     "category": "Data",
     "icons": "📁",
     "show": true,
-    "dir": "filestudio",
-    "path": "file",
-    "thumbnail": "/thumbnails/file-studio.png",
+    "dir": "archivestudio",
+    "path": "archive",
+    "thumbnail": "/thumbnails/archive-studio.png",
     "accepts": [
       ".zip",
       ".json",
@@ -321,6 +344,28 @@ window.TOOLS_CONFIG = [
       "application/zip",
       "application/json",
       "text/csv"
+    ]
+  },
+  {
+    "name": "finance |STUDIO",
+    "description": "Local-first accounts and transaction register with derived balances, envelope-ready categories, manual balance snapshots and statement import. No bank connection, no live prices.",
+    "category": "Data",
+    "icons": "💰",
+    "show": true,
+    "dir": "financestudio",
+    "path": "finance",
+    "thumbnail": "/thumbnails/finance-studio.png",
+    "accepts": [
+      ".csv",
+      ".qif",
+      ".ofx",
+      ".json"
+    ],
+    "mime": [
+      "text/csv",
+      "application/qif",
+      "application/x-ofx",
+      "application/json"
     ]
   }
 ];

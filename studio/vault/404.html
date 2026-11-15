@@ -2,6 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // Resolve the theme before first paint: the suite preference if there is
+      // one, otherwise the OS. Mirrors applyTheme() in shared/chrome so the
+      // header never flashes the wrong appearance on load.
+      (function () {
+        try {
+          var stored = localStorage.getItem('studio:theme');
+          var theme = stored === 'dark' || stored === 'light'
+            ? stored
+            : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          var root = document.documentElement;
+          root.setAttribute('data-theme', theme);
+          root.classList.toggle('dark', theme === 'dark');
+          root.classList.toggle('dark-theme', theme === 'dark');
+          root.style.colorScheme = theme;
+          // Font size is the same kind of preference: apply it in the same pass, so
+          // the chrome does not resize once React mounts.
+          var size = localStorage.getItem('studio:font-size');
+          if (size === 'small' || size === 'large') root.setAttribute('data-font-size', size);
+          else root.removeAttribute('data-font-size');
+        } catch (e) { /* storage blocked: keep the markup's own default */ }
+      })();
+    </script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Meta CSP (plan §B.5): frame-ancestors is deliberately NOT claimed —
          it is ignored in meta CSP and the framing gap is disclosed in-product. -->
@@ -18,7 +42,7 @@
         }
       })();
     </script>
-    <script type="module" crossorigin src="/studio/vault/assets/index-JUa7XEli.js"></script>
+    <script type="module" crossorigin src="/studio/vault/assets/index-CMOG6loK.js"></script>
     <link rel="stylesheet" crossorigin href="/studio/vault/assets/index-882mPp1Y.css">
   <link rel="manifest" href="/studio/vault/manifest.webmanifest"></head>
   <body>
