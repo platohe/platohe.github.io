@@ -1,0 +1,26 @@
+{
+  "name": "Sample Mind Map",
+  "version": 1,
+  "pages": [
+    {
+      "id": "page-1",
+      "name": "Mind Map",
+      "width": 1200,
+      "height": 800,
+      "shapes": [
+        { "id": "root", "type": "mindmap-root", "x": 500, "y": 300, "width": 140, "height": 60, "text": "Project" },
+        { "id": "n1", "type": "mindmap-node", "x": 200, "y": 150, "width": 120, "height": 50, "text": "Planning" },
+        { "id": "n2", "type": "mindmap-node", "x": 800, "y": 150, "width": 120, "height": 50, "text": "Design" },
+        { "id": "n3", "type": "mindmap-node", "x": 200, "y": 450, "width": 120, "height": 50, "text": "Testing" },
+        { "id": "n4", "type": "mindmap-node", "x": 800, "y": 450, "width": 120, "height": 50, "text": "Launch" }
+      ],
+      "connectors": [
+        { "id": "c1", "from": { "shapeId": "root", "port": "left" }, "to": { "shapeId": "n1", "port": "right" }, "kind": "curved" },
+        { "id": "c2", "from": { "shapeId": "root", "port": "right" }, "to": { "shapeId": "n2", "port": "left" }, "kind": "curved" },
+        { "id": "c3", "from": { "shapeId": "root", "port": "bottom" }, "to": { "shapeId": "n3", "port": "top" }, "kind": "curved" },
+        { "id": "c4", "from": { "shapeId": "root", "port": "right" }, "to": { "shapeId": "n4", "port": "top" }, "kind": "curved" }
+      ]
+    }
+  ],
+  "theme": { "name": "light", "isDark": false }
+}

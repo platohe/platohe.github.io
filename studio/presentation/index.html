@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Resolve the theme before first paint: the suite preference if there is
+      // one, otherwise the OS. Mirrors applyTheme() in shared/chrome so the
+      // header never flashes the wrong appearance on load.
+      (function () {
+        try {
+          var stored = localStorage.getItem('studio:theme');
+          var theme = stored === 'dark' || stored === 'light'
+            ? stored
+            : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          var root = document.documentElement;
+          root.setAttribute('data-theme', theme);
+          root.classList.toggle('dark', theme === 'dark');
+          root.classList.toggle('dark-theme', theme === 'dark');
+          root.style.colorScheme = theme;
+          // Font size is the same kind of preference: apply it in the same pass, so
+          // the chrome does not resize once React mounts.
+          var size = localStorage.getItem('studio:font-size');
+          if (size === 'small' || size === 'large') root.setAttribute('data-font-size', size);
+          else root.removeAttribute('data-font-size');
+        } catch (e) { /* storage blocked: keep the markup's own default */ }
+      })();
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#d83b01" />
+    <title>presentation |STUDIO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aptos:ital,wght@0,400;0,600;0,700;1,400&family=Segoe+UI:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body, html, #root {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        font-family: 'Aptos', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        background-color: #f3f2f1;
+        color: #242424;
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-4LPGT3X-.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/fluent-vendor-QupgnRxj.js">
+    <link rel="modulepreload" crossorigin href="./assets/jszip-o4SqIU_c.js">
+    <link rel="modulepreload" crossorigin href="./assets/pptxgenjs-BUpdzgml.js">
+    <link rel="modulepreload" crossorigin href="./assets/chart-vendor-BYT9cCfO.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-BPH-gpk6.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./icon-192.png">
+  <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

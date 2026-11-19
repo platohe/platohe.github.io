@@ -1,0 +1,1 @@
+let n=null;function c(e="/"){const t=e||"/";return`${t.endsWith("/")?t:`${t}/`}sample-deck.json`}async function a(){if(n)return n;try{const e=await fetch(c("./"));if(!e.ok)throw new Error(`HTTP ${e.status}`);const t=await e.json();return n=t,t}catch(e){return console.warn("[sampleDeck] fetch failed:",e.message),null}}export{a as loadSampleDeck,c as sampleDeckUrl};

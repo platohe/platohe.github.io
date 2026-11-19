@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Resolve the theme before first paint: the suite preference if there is
+      // one, otherwise the OS. Mirrors applyTheme() in shared/chrome so the
+      // header never flashes the wrong appearance on load.
+      (function () {
+        try {
+          var stored = localStorage.getItem('studio:theme');
+          var theme = stored === 'dark' || stored === 'light'
+            ? stored
+            : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          var root = document.documentElement;
+          root.setAttribute('data-theme', theme);
+          root.classList.toggle('dark', theme === 'dark');
+          root.classList.toggle('dark-theme', theme === 'dark');
+          root.style.colorScheme = theme;
+          // Font size is the same kind of preference: apply it in the same pass, so
+          // the chrome does not resize once React mounts.
+          var size = localStorage.getItem('studio:font-size');
+          if (size === 'small' || size === 'large') root.setAttribute('data-font-size', size);
+          else root.removeAttribute('data-font-size');
+        } catch (e) { /* storage blocked: keep the markup's own default */ }
+      })();
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="whiteboard |STUDIO" />
+    <meta name="theme-color" content="#0078d4" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="whiteboard |STUDIO" />
+    <title>whiteboard |STUDIO</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body, #root {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        touch-action: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      body {
+        font-family: "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
+        background-color: #f3f2f1;
+        color: #323130;
+      }
+      ::-moz-selection {
+        background-color: #0078d4;
+        color: white;
+      }
+      ::selection {
+        background-color: #0078d4;
+        color: white;
+      }
+      /* Scrollbar styling */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #a19f9d;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #8a8886;
+      }
+      /* Focus visible for accessibility */
+      :focus-visible {
+        outline: 2px solid #0078d4;
+        outline-offset: 2px;
+      }
+      /* Reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+      /* High contrast mode */
+      @media (prefers-contrast: high) {
+        :root {
+          --color-primary: #000000;
+          --color-background: #ffffff;
+          --color-text: #000000;
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-DwLGghdp.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/vendor-react-_dUh0CYc.js">
+    <link rel="modulepreload" crossorigin href="./assets/vendor-fluent-mrWhZxqa.js">
+    <link rel="modulepreload" crossorigin href="./assets/vendor-utils-ayvGrV1u.js">
+    <link rel="modulepreload" crossorigin href="./assets/app-stencils-PQRM_Wyq.js">
+    <link rel="modulepreload" crossorigin href="./assets/app-data-DpibLl3y.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-DgOtEKiH.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./icon-192.png">
+  <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

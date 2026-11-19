@@ -1,0 +1,1 @@
+const n={kanban:"Kanban view needs a group-by column",calendar:"Calendar view needs a date column",gallery:""};function l(a,r){const i=Object.keys(n).filter(e=>e!==r).map(e=>n[e]).filter(e=>e!=="");return a.filter(e=>!i.includes(e))}export{l as w};

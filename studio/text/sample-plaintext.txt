@@ -1,0 +1,46 @@
+Welcome to TextStudio
+
+This is a sample plain text file to help you get started with TextStudio.
+
+TextStudio is a writing-focused text editor that helps you focus on your prose without distractions.
+
+Getting Started
+===============
+
+1. Set your writing goal in the onboarding screen
+2. Create or open a document
+3. Start writing
+4. Track your progress in the status bar
+
+Features
+--------
+
+- Writing Goals: Set daily word-count targets
+- EPUB Export: Export your documents as EPUB books
+- Voice Typing: Dictate your text using the browser's speech recognition
+- Daily Notes: Quick access to a daily note template
+- Ambient Sounds: Background sounds to help you focus
+- Wiki Graph: Visualize connections between your documents
+
+Tips for Better Writing
+------------------------
+
+* Write first, edit later
+* Set small, achievable goals
+* Use voice typing to overcome writer's block
+* Take breaks to refresh your mind
+* Read your work aloud to catch errors
+
+Keyboard Shortcuts
+------------------
+
+Ctrl+S: Save
+Ctrl+P: Open file
+Ctrl+F: Find
+Ctrl+H: Find and replace
+Ctrl+Z: Undo
+Ctrl+Y: Redo
+
+---
+
+Happy writing!
