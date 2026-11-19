@@ -1,0 +1,12 @@
+import{r as c,j as e,y as m,z as f,E as j,G as b,an as y,H as v,Q as S,J as h,m as D}from"./index-DISOiR9H.js";import{L as g}from"./Label-ckOQjWd2.js";import{T as w}from"./Textarea-DjKZSzgx.js";import"./useFieldControlProps-C2WeJVZ5.js";const B=D({body:{display:"flex",flexDirection:"column",gap:"10px",padding:"4px 0"},textarea:{width:"100%",fontFamily:"var(--font-mono, Consolas, monospace)",fontSize:"13px",minHeight:"160px"},hint:{fontSize:"11px",color:"var(--text-tertiary)"},preset:{fontSize:"12px"},presetBtn:{cursor:"pointer",border:"1px solid var(--border-color)",background:"var(--bg-surface)",borderRadius:"var(--radius-sm)",padding:"2px 8px",color:"var(--text-secondary)"}}),d={flowchart:`graph TD
+    A[Start] --> B{Decision}
+    B -->|Yes| C[Action]
+    B -->|No| D[Stop]`,sequence:`sequenceDiagram
+    Alice->>Bob: Hello
+    Bob-->>Alice: Hi there`,gantt:`gantt
+    title Project
+    section A
+    Task 1 :a1, 2024-01-01, 30d`,pie:`pie
+    title Languages
+    "Python" : 40
+    "JS" : 60`};function E({isOpen:r,onClose:n,onInsert:u,initialCode:i=""}){const s=B(),[o,l]=c.useState(i||d.flowchart),[p,x]=c.useState("");return c.useEffect(()=>{r&&(l(i||d.flowchart),x(""))},[r,i]),r?e.jsx(m,{open:r,onOpenChange:(a,t)=>!t.open&&n(),children:e.jsx(f,{style:{maxWidth:"520px"},children:e.jsxs(j,{children:[e.jsxs(b,{children:[e.jsx(y,{style:{marginRight:8}}),"Insert Mermaid Diagram"]}),e.jsxs(v,{className:s.body,children:[e.jsxs("div",{children:[e.jsx("div",{style:{display:"flex",gap:6,marginBottom:6,flexWrap:"wrap"},children:Object.entries(d).map(([a,t])=>e.jsx("button",{className:s.presetBtn,onClick:()=>l(t),children:a},a))}),e.jsx(g,{children:"Mermaid source"}),e.jsx(w,{className:s.textarea,value:o,onChange:(a,t)=>l(t.value),placeholder:"graph TD; A-->B"}),e.jsx("div",{className:s.hint,children:"Supports flowchart, sequence, gantt, class, state, pie and more."})]}),e.jsxs("div",{children:[e.jsx(g,{children:"Optional caption"}),e.jsx("input",{style:{width:"100%",padding:"4px 8px",fontSize:13},value:p,onChange:a=>x(a.target.value),placeholder:"Figure 1: User flow"})]})]}),e.jsxs(S,{children:[e.jsx(h,{appearance:"primary",style:{background:"var(--brand-gradient)",boxShadow:"var(--shadow-brand)"},onClick:()=>{o.trim()&&(u(o,p||void 0),n())},disabled:!o.trim(),children:"Insert"}),e.jsx(h,{appearance:"subtle",onClick:n,children:"Cancel"})]})]})})}):null}export{E as MermaidDialog,E as default};
